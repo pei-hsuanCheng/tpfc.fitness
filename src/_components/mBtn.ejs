@@ -1,0 +1,18 @@
+<%
+  const props = {
+    target: /^https?/.test(href) ? 'target="_blank"' : '',
+    rel: /^https?/.test(href) ? 'rel="noopener"' : '',
+    size: size === 'md'
+            ? '--md'
+            : '--sm',
+    arrow: typeof arrow !== 'undefined' && arrow ? ' --arrow' : ''
+  }
+-%>
+<a
+  href="<%- href %>"
+  class="m-btn <%- props.size %><%- props.arrow %><%- typeof style !== 'undefined' && typeof style.main !== 'undefined' ? ` ${style.main}` : '' %> ga_click_trace"
+  <%- props.target %>
+  <%- props.rel %>
+>
+  <em><%- label %></em>
+</a>

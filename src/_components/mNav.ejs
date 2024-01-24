@@ -1,0 +1,20 @@
+<div class="m-nav pt:flex-shrink-0 text-center flex flex-row-reverse items-center">
+  <button
+    type="button"
+    class="m-nav-btn relative flex-shrink-0 w-[40px] h-[40px] block"
+    :class="{'active': store.nav.active}"
+    @click="store.nav.onClick"
+  >
+    <i></i>
+  </button>
+  <div class="m-nav-bd m:top-full m:left-0 m:bg-[#fff] m:w-full m:max-h-0 m:overflow-hidden m:absolute m:transition-all m:duration-300">
+    <ul class="flex items-center">
+      <li
+        class="p:px-[10px]"
+        v-for="item, index in store.nav.items"
+      >
+        <a :href="item.url">{{ item.label }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

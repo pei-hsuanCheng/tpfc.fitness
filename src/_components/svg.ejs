@@ -1,0 +1,8 @@
+<%
+  const props = {
+    svgName: /\//.test(svgName) ? /[\w\d\-\_]+$/.exec(svgName)[0] : svgName
+  }
+-%>
+<svg<%- typeof style !== 'undefined' && style.main !== 'undefined' && style.main ? ` class="${style.main}"` : '' %>>
+  <use class="fill-current" xlink:href="#<%- props.svgName %>">
+</svg>

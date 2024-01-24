@@ -1,0 +1,22 @@
+<header class="m-hd p:max-w-[1200px] p:h-[76px] t:px-[15px] m:px-[10px] w-full flex items-center">
+  <h1 class="flex-grow flex items-center">
+    <a
+      href="javascript:;"
+      class="m-hd-logo pt:inline-block m:flex m:items-center"
+      target="_blank"
+      rel="noopener"
+    >
+      <%- require('@component/img.ejs')({
+        path: require('common/logo.svg'),
+        alt: process.env.PROJECT_NAME,
+        style: {
+          main: 'p:w-[184px] p:h-[42px] t:w-[138px] t:h-[32px] m:w-[100px] m:h-[23px]'
+        }
+      }) %>
+      <em class="sr-only">
+        <%- process.env.PROJECT_NAME %>
+      </em>
+    </a>
+  </h1>
+  <%- require('@component/mNav.ejs')() %>
+</header>

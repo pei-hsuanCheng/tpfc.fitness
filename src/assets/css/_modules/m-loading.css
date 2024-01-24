@@ -1,0 +1,23 @@
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.m-loading {
+  &.fixed {
+    @apply inset-0 z-[5];
+
+    &::before {
+      @apply content-default w-full h-full bg-[var(--black)] opacity-75 absolute;
+    }
+  }
+}
+
+.m-loading-svg {
+  animation: loading 1.2s infinite;
+}

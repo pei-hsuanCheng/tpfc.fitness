@@ -1,0 +1,52 @@
+.m-nav-btn {
+  &::before,
+  &::after {
+    @apply content-default;
+  }
+
+  &::before,
+  &::after,
+  > i {
+    @apply top-1/2 left-1/2 absolute
+      w-[20px] h-[2px]
+      bg-[#222]
+      transition-all duration-300
+      transform -translate-x-1/2 -translate-y-1/2
+      origin-center;
+  }
+
+  &::before {
+    @apply mt-[-6px];
+  }
+
+  &::after {
+    @apply mt-[6px];
+  }
+
+  &.active {
+    &::before,
+    &::after {
+      @apply mt-0;
+    }
+
+    &::before {
+      @apply rotate-[45deg];
+    }
+
+    &::after {
+      @apply rotate-[-45deg];
+    }
+
+    > i {
+      @apply opacity-0;
+    }
+
+    & + .m-nav {
+      max-height: calc(100vh - 40px);
+
+      &::before {
+        @apply bottom-0;
+      }
+    }
+  }
+}
