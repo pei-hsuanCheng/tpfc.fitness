@@ -9,7 +9,7 @@
   > i {
     @apply top-1/2 left-1/2 absolute
       w-[20px] h-[2px]
-      bg-[#222]
+      bg-[var(--white)]
       transition-all duration-300
       transform -translate-x-1/2 -translate-y-1/2
       origin-center;

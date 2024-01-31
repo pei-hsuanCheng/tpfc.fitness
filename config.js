@@ -3,11 +3,11 @@ const htmlPage = require('./htmlPage/index.js');
 module.exports = {
   port: 65534,
   ieVersion: 10, // 10 或 0
-  projectName: 'first class fitness',
+  projectName: 'first class 頭等倉運動空間',
   copyright: 'FIRST CLASS FITNESS © 2022 ALL RIGHT RESERVED.',
   desktopMinWidth: 1366,
   mobileMaxWidth: 740,
-  basicMobileWidth: 320,
+  basicMobileWidth: 375,
   copyStatic: true,
   docker: false,
   https: true,

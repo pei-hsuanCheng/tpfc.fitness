@@ -1,81 +1,20 @@
 .m-btn {
-  box-shadow: 0 0 5px rgba(#001932, 0.45);
+  @apply flex justify-center border border-solid border-[var(--white)] font-bold text-[var(--white)] text-center;
+}
 
-  @apply bg-[#fd9d52] text-[#fff] font-bold leading-[1] inline-flex items-center justify-center transition-all duration-300;
-
-  &.\-\-arrow {
-    &::after {
-      @apply content-default transform rotate-[45deg] border-t-[2px] border-r-[2px] border-[#fff] block;
-    }
-  }
+.m-btn-cnt {
+  @apply flex items-center justify-center;
 }
 
 @screen p {
   .m-btn {
-    @apply rounded-[8px];
+    @apply transition-all duration-200 ease-in-out;
 
     &:hover {
-      @apply bg-[#fc8020] ;
-    }
-
-    &.\-\-md {
-      @apply text-[30px] min-w-[325px] min-h-[64px];
-    }
-
-    &.\-\-sm {
-      @apply text-[24px] min-w-[230px] min-h-[52px];
-
-      &.\-\-arrow {
-        &::after {
-          @apply ml-[8px] w-[10px] h-[10px];
-        }
-      }
+      @apply bg-[#fff] bg-opacity-10;
     }
   }
 }
 
 @screen tm {
-  .m-btn {
-    @apply rounded-[6px];
-
-    &.\-\-md {
-      @apply text-[22px];
-    }
-  }
-}
-
-@screen t {
-  .m-btn {
-    @apply min-h-[48px];
-
-    &.\-\-md {
-      @apply min-w-[240px] ;
-    }
-
-    &.\-\-sm {
-      @apply text-[18px] min-w-[180px];
-
-      &.\-\-arrow {
-        &::after {
-          @apply ml-[6px] w-[9px] h-[9px];
-        }
-      }
-    }
-  }
-}
-
-@screen m {
-  .m-btn {
-    @apply min-w-[230px] min-h-[40px];
-
-    &.\-\-sm {
-      @apply text-[15px];
-    }
-
-    &.\-\-arrow {
-      &::after {
-        @apply ml-[4px] w-[8px] h-[8px];
-      }
-    }
-  }
 }

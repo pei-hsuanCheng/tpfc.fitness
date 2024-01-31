@@ -1,16 +1,14 @@
-<header class="m-hd p:max-w-[1200px] p:h-[76px] t:px-[15px] m:px-[10px] w-full flex items-center">
+<header class="m-hd p:h-[72px] p:px-[20px] t:px-[15px] m:px-[10px] tm:h-[70px] w-full flex items-center bg-[var(--black)]">
   <h1 class="flex-grow flex items-center">
     <a
-      href="javascript:;"
+      href="/"
       class="m-hd-logo pt:inline-block m:flex m:items-center"
-      target="_blank"
       rel="noopener"
     >
-      <%- require('@component/img.ejs')({
-        path: require('common/logo.svg'),
-        alt: process.env.PROJECT_NAME,
+      <%- require('@component/svg.ejs')({
+        svgName: 'logo_sub',
         style: {
-          main: 'p:w-[184px] p:h-[42px] t:w-[138px] t:h-[32px] m:w-[100px] m:h-[23px]'
+          main: 'text-[var(--white)] p:w-[260px] p:h-[55px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]'
         }
       }) %>
       <em class="sr-only">

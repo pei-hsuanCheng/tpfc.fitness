@@ -7,7 +7,9 @@ const CSSMINIMIZERPLUGIN = require('css-minimizer-webpack-plugin');
 const HTMLWEBPACKPLUGIN = require('html-webpack-plugin');
 const BEAUTIFYHTMLWEBPACKPLUGIN = require('beautify-html-webpack-plugin');
 const TERSERPLUGIN = require('terser-webpack-plugin');
-const { HtmlWebpackSkipAssetsPlugin } = require('html-webpack-skip-assets-plugin');
+const {
+  HtmlWebpackSkipAssetsPlugin,
+} = require('html-webpack-skip-assets-plugin');
 const IMAGEMINIMIZERPLUGIN = require('image-minimizer-webpack-plugin');
 const COPYWEBPACKPLUGIN = require('copy-webpack-plugin');
 const IMAGEMINPLUGIN = require('imagemin-webpack-plugin').default;
@@ -23,13 +25,21 @@ Object.keys(require('os').networkInterfaces()).forEach((devName) => {
 
   for (let i = 0; i < iface.length; i += 1) {
     const alias = iface[i];
-    if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal && !new RegExp('^172').test(alias.address)) {
+    if (
+      alias.family === 'IPv4' &&
+      alias.address !== '127.0.0.1' &&
+      !alias.internal &&
+      !new RegExp('^172').test(alias.address)
+    ) {
       IP = alias.address;
     }
   }
 });
 
-const extension = process.env.APP_ENV === 'build' && CONFIG.buildJSExtension ? CONFIG.buildJSExtension : 'js';
+const extension =
+  process.env.APP_ENV === 'build' && CONFIG.buildJSExtension
+    ? CONFIG.buildJSExtension
+    : 'js';
 const extendPlugins = () => {
   // const jqueryPlugin = CONFIG.jquery ? [new WEBPACKP.ProvidePlugin({
   //   $: 'jquery',
@@ -37,10 +47,11 @@ const extendPlugins = () => {
   //   'window.jQuery': 'jquery'
   // })] : [];
   const miniCssExtractCSS = new MINiCSSEXTRACTPLUGIN({
-    filename: (CONFIG.css + (CONFIG.commonCss
-      ? `${CONFIG.commonCss}.css?[fullhash:8]`
-      : '[name].css?[fullhash:8]')
-    ),
+    filename:
+      CONFIG.css +
+      (CONFIG.commonCss
+        ? `${CONFIG.commonCss}.css?[fullhash:8]`
+        : '[name].css?[fullhash:8]'),
     experimentalUseImportModule: true,
   });
   let copyWebpackPlugin = () => {};
@@ -49,7 +60,7 @@ const extendPlugins = () => {
   const webpackDefinePlugin = new WEBPACKP.DefinePlugin({
     'process.env': {
       APP_IP: JSON.stringify(IP),
-      APP_ENV: JSON.stringify((process.env.APP_ENV || process.env.NODE_ENV)),
+      APP_ENV: JSON.stringify(process.env.APP_ENV || process.env.NODE_ENV),
       ROOT_FILES: JSON.stringify({
         js: CONFIG.js,
         css: CONFIG.css,
@@ -59,33 +70,46 @@ const extendPlugins = () => {
       }),
       PROJECT_NAME: JSON.stringify(CONFIG.projectName),
       COPYRIGHT: JSON.stringify(CONFIG.copyright),
-      COMMON_PLUGINS: CONFIG.commonPlugins ? JSON.stringify(CONFIG.commonPlugins) : '',
-      BUILD_JS_EXTENSION: JSON.stringify(process.env.APP_ENV === 'build' ? CONFIG.buildJSExtension : null),
-      IE_VERSION: JSON.stringify((CONFIG.ieVersion !== 0 ? `IE ${CONFIG.ieVersion}` : 'Microsoft Edge')),
+      COMMON_PLUGINS: CONFIG.commonPlugins
+        ? JSON.stringify(CONFIG.commonPlugins)
+        : '',
+      BUILD_JS_EXTENSION: JSON.stringify(
+        process.env.APP_ENV === 'build' ? CONFIG.buildJSExtension : null
+      ),
+      IE_VERSION: JSON.stringify(
+        CONFIG.ieVersion !== 0 ? `IE ${CONFIG.ieVersion}` : 'Microsoft Edge'
+      ),
     },
   });
-  const cleanWebpackPlugin = process.env.NODE_ENV !== 'development'
-    ? new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['**/*'],
-    }) : () => {};
+  const cleanWebpackPlugin =
+    process.env.NODE_ENV !== 'development'
+      ? new CleanWebpackPlugin({
+          cleanOnceBeforeBuildPatterns: ['**/*'],
+        })
+      : () => {};
   const removeFiles = () => {
     const remove = [];
 
     if (CONFIG.removeFiles) {
       for (let i = 0; i < CONFIG.removeFiles.length; i += 1) {
-        remove.push(`./${process.env.APP_ENV !== 'deploy' ? process.env.APP_ENV : 'dist'}/${CONFIG.removeFiles[i]}`);
+        remove.push(
+          `./${
+            process.env.APP_ENV !== 'deploy' ? process.env.APP_ENV : 'dist'
+          }/${CONFIG.removeFiles[i]}`
+        );
       }
     }
 
     return remove;
   };
-  const removePlugin = process.env.NODE_ENV !== 'development'
-    ? new REMOVEPLUGIN({
-      after: {
-        include: removeFiles(),
-      },
-    })
-    : () => {};
+  const removePlugin =
+    process.env.NODE_ENV !== 'development'
+      ? new REMOVEPLUGIN({
+          after: {
+            include: removeFiles(),
+          },
+        })
+      : () => {};
 
   for (let i = 0; i < CONFIG.plugins().length; i += 1) {
     const obj = CONFIG.plugins()[i];
@@ -94,9 +118,7 @@ const extendPlugins = () => {
     obj.cache = true;
     obj.title = obj.title || '';
 
-    htmlWebpackPlugin.push(
-      new HTMLWEBPACKPLUGIN(obj),
-    );
+    htmlWebpackPlugin.push(new HTMLWEBPACKPLUGIN(obj));
   }
 
   const copy = [];
@@ -151,17 +173,19 @@ const extendPlugins = () => {
     [beautifyHtmlWebpackPlugin],
     [new HtmlWebpackSkipAssetsPlugin()],
     [new VueLoaderPlugin()],
-    [new IMAGEMINPLUGIN({
-      disable: process.env.NODE_ENV !== 'production',
-      pngquant: {
-        quality: '60-75',
-        speed: 4,
-      },
-      jpegtran: {
-        progressive: true,
-        quality: 60,
-      },
-    })],
+    [
+      new IMAGEMINPLUGIN({
+        disable: process.env.NODE_ENV !== 'production',
+        pngquant: {
+          quality: '60-75',
+          speed: 4,
+        },
+        jpegtran: {
+          progressive: true,
+          quality: 60,
+        },
+      }),
+    ]
   );
 };
 
@@ -169,7 +193,7 @@ const resolveModules = () => {
   const pathReturn = [PATH.resolve('src/')];
 
   Object.keys(CONFIG).forEach((value) => {
-    if (typeof (CONFIG[value]) === 'string') {
+    if (typeof CONFIG[value] === 'string') {
       pathReturn.push(`${PATH.resolve(`src/${CONFIG[value]}`)}`);
     }
   });
@@ -185,7 +209,11 @@ const resolveAlias = () => {
   };
 
   Object.keys(CONFIG).forEach((value) => {
-    if (typeof (CONFIG[value]) === 'string' && CONFIG[value] && /\//.test(CONFIG[value])) {
+    if (
+      typeof CONFIG[value] === 'string' &&
+      CONFIG[value] &&
+      /\//.test(CONFIG[value])
+    ) {
       pathReturn[`@${value}`] = PATH.join(__dirname, `src/${CONFIG[value]}`);
     }
   });
@@ -216,145 +244,158 @@ module.exports = {
     return pathReturn;
   },
   output: {
-    path: PATH.resolve(__dirname, (process.env.APP_ENV !== 'deploy' ? process.env.APP_ENV : 'dist')),
+    path: PATH.resolve(
+      __dirname,
+      process.env.APP_ENV !== 'deploy' ? process.env.APP_ENV : 'dist'
+    ),
     filename: `${CONFIG.js}[name].${extension}?[fullhash:8]`,
     publicPath: CONFIG.rootDirectory ? CONFIG.rootDirectory : 'auto',
     pathinfo: false,
   },
   devtool: 'eval-cheap-source-map',
-  module:
-  {
-    rules: [{
-      test: /\.ejs$/i,
-      use: [{
-        loader: 'ejs-easy-loader',
-      }],
-    },
-    {
-      test: /\.vue$/,
-      use: [{
-        loader: 'vue-loader',
-      }],
-    },
-    {
-      test: /\.(tsx?|jsx?)$/,
-      use: [{
-        loader: 'babel-loader',
-        options: {
-          cacheDirectory: true,
-          include: PATH.resolve(__dirname, '../src'),
-          configFile: `${__dirname}/.babelrc`,
-          // presets: [
-          //   ['@babel/preset-env', {
-          //     targets: {
-          //       edge: '17',
-          //       firefox: '60',
-          //       chrome: '67',
-          //       safari: '11.1',
-          //       ie: '10'
-          //     }
-          //   }]
-          // ]
-        },
-      }],
-      include: PATH.resolve('src'),
-    },
-    {
-      test: /\.s?css$/i,
-      use: [
-        {
-          loader: MINiCSSEXTRACTPLUGIN.loader,
-          options: {
-            publicPath: (resourcePath, context) => `${PATH.relative(PATH.dirname(resourcePath), context).replace(/\\/g, '/')}/`,
+  module: {
+    rules: [
+      {
+        test: /\.ejs$/i,
+        use: [
+          {
+            loader: 'ejs-easy-loader',
           },
-        },
-        'css-loader',
-        'postcss-loader',
-      ],
-    },
-    {
-      test: /\.postcss$/,
-      use: [
-        'vue-style-loader',
-        'css-loader',
-        'postcss-loader',
-      ],
-    },
-    {
-      test: /\.(jpe?g|png|gif|svg|cur)$/i,
-      type: 'asset/resource',
-      include: PATH.resolve(__dirname, `src/${CONFIG.imgs}`),
-      generator: {
-        filename: '[path][name][ext]?[hash:8]',
+        ],
       },
-      // use: [
-      //   {
-      //     loader: IMAGEMINIMIZERPLUGIN.loader,
-      //     options: {
-      //       minimizerOptions: {
-      //         plugins: [
-      //           ['gifsicle', {
-      //             interlaced: true,
-      //             optimizationLevel: 3
-      //           }],
-      //           ['jpegtran', {
-      //             progressive: true,
-      //             quality: 75
-      //           }],
-      //           ['pngquant', {
-      //             quality: [0.60, 0.75],
-      //             speed: 4
-      //           }]
-      //           // ['svgo', {
-      //           //   plugins: extendDefaultPlugins([{
-      //           //     name: 'removeViewBox',
-      //           //     active: false
-      //           //   }])
-      //           // }]
-      //         ]
-      //       }
-      //     }
-      //   }
-      // ]
-    },
-    CONFIG.webp ? {
-      test: /\.(jpe?g|png)$/i,
-      // use: [
-      //   {
-      //     loader: IMAGEMINIMIZERPLUGIN.loader,
-      //     options: {
-      //       deleteOriginalAssets: false,
-      //       filename: '[path][name].webp?[hash:8]',
-      //       minimizerOptions: {
-      //         plugins: [
-      //           ['webp', {
-      //             quality: 88
-      //           }]
-      //         ]
-      //       }
-      //     }
-      //   }
-      // ]
-    } : {},
-    {
-      test: /\.svg$/,
-      include: PATH.resolve(__dirname, `src/${CONFIG.svg}`),
-      use: [
-        {
-          loader: 'svg-sprite-loader',
-        },
-        'svgo-loader',
-      ],
-    },
-    CONFIG.fonts ? {
-      test: /\.(woff|woff2|ttf|eot|svg)$/,
-      include: PATH.resolve(__dirname, `src/${CONFIG.fonts}`),
-      type: 'asset/resource',
-      generator: {
-        filename: '[path][name][ext]?[hash:8]',
+      {
+        test: /\.vue$/,
+        use: [
+          {
+            loader: 'vue-loader',
+          },
+        ],
       },
-      // use: 'file-loader?name=[path][name].[ext]?[hash]'
-    } : {},
+      {
+        test: /\.(tsx?|jsx?)$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+              include: PATH.resolve(__dirname, '../src'),
+              configFile: `${__dirname}/.babelrc`,
+              // presets: [
+              //   ['@babel/preset-env', {
+              //     targets: {
+              //       edge: '17',
+              //       firefox: '60',
+              //       chrome: '67',
+              //       safari: '11.1',
+              //       ie: '10'
+              //     }
+              //   }]
+              // ]
+            },
+          },
+        ],
+        include: PATH.resolve('src'),
+      },
+      {
+        test: /\.s?css$/i,
+        use: [
+          {
+            loader: MINiCSSEXTRACTPLUGIN.loader,
+            options: {
+              publicPath: (resourcePath, context) =>
+                `${PATH.relative(PATH.dirname(resourcePath), context).replace(
+                  /\\/g,
+                  '/'
+                )}/`,
+            },
+          },
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /\.postcss$/,
+        use: ['vue-style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg|cur)$/i,
+        type: 'asset/resource',
+        include: PATH.resolve(__dirname, `src/${CONFIG.imgs}`),
+        generator: {
+          filename: '[path][name][ext]?[hash:8]',
+        },
+        // use: [
+        //   {
+        //     loader: IMAGEMINIMIZERPLUGIN.loader,
+        //     options: {
+        //       minimizerOptions: {
+        //         plugins: [
+        //           ['gifsicle', {
+        //             interlaced: true,
+        //             optimizationLevel: 3
+        //           }],
+        //           ['jpegtran', {
+        //             progressive: true,
+        //             quality: 75
+        //           }],
+        //           ['pngquant', {
+        //             quality: [0.60, 0.75],
+        //             speed: 4
+        //           }]
+        //           // ['svgo', {
+        //           //   plugins: extendDefaultPlugins([{
+        //           //     name: 'removeViewBox',
+        //           //     active: false
+        //           //   }])
+        //           // }]
+        //         ]
+        //       }
+        //     }
+        //   }
+        // ]
+      },
+      CONFIG.webp
+        ? {
+            test: /\.(jpe?g|png)$/i,
+            // use: [
+            //   {
+            //     loader: IMAGEMINIMIZERPLUGIN.loader,
+            //     options: {
+            //       deleteOriginalAssets: false,
+            //       filename: '[path][name].webp?[hash:8]',
+            //       minimizerOptions: {
+            //         plugins: [
+            //           ['webp', {
+            //             quality: 88
+            //           }]
+            //         ]
+            //       }
+            //     }
+            //   }
+            // ]
+          }
+        : {},
+      {
+        test: /\.svg$/,
+        include: PATH.resolve(__dirname, `src/${CONFIG.svg}`),
+        use: [
+          {
+            loader: 'svg-sprite-loader',
+          },
+          'svgo-loader',
+        ],
+      },
+      CONFIG.fonts
+        ? {
+            test: /\.(woff|woff2|ttf|eot|svg)$/,
+            include: PATH.resolve(__dirname, `src/${CONFIG.fonts}`),
+            type: 'asset/resource',
+            generator: {
+              filename: '[path][name][ext]?[hash:8]',
+            },
+            // use: 'file-loader?name=[path][name].[ext]?[hash]'
+          }
+        : {},
     ],
   },
   optimization: {
@@ -407,37 +448,49 @@ module.exports = {
           implementation: IMAGEMINIMIZERPLUGIN.imageminMinify,
           options: {
             plugins: [
-              ['gifsicle', {
-                interlaced: true,
-                optimizationLevel: 3,
-              }],
-              ['jpegtran', {
-                progressive: true,
-                quality: 75,
-              }],
-              ['pngquant', {
-                quality: [0.60, 0.75],
-                speed: 4,
-              }],
-              ['svgo', {
-                plugins: [
-                  {
-                    name: 'preset-default',
-                    params: {
-                      overrides: {
-                        removeViewBox: false,
-                        addAttributesToSVGElement: {
-                          params: {
-                            attributes: [
-                              { xmlns: 'http://www.w3.org/2000/svg' },
-                            ],
+              [
+                'gifsicle',
+                {
+                  interlaced: true,
+                  optimizationLevel: 3,
+                },
+              ],
+              [
+                'jpegtran',
+                {
+                  progressive: true,
+                  quality: 75,
+                },
+              ],
+              [
+                'pngquant',
+                {
+                  quality: [0.6, 0.75],
+                  speed: 4,
+                },
+              ],
+              [
+                'svgo',
+                {
+                  plugins: [
+                    {
+                      name: 'preset-default',
+                      params: {
+                        overrides: {
+                          removeViewBox: false,
+                          addAttributesToSVGElement: {
+                            params: {
+                              attributes: [
+                                { xmlns: 'http://www.w3.org/2000/svg' },
+                              ],
+                            },
                           },
                         },
                       },
                     },
-                  },
-                ],
-              }],
+                  ],
+                },
+              ],
             ],
           },
         },

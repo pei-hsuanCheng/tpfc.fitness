@@ -52,19 +52,19 @@
 -%>
 <figure<%- typeof style !== 'undefined' && style.main !== 'undefined' ? ` class="${ style.main }"` : '' %>>
   <% if ( image.m.path || image.p.webp || image.m.webp ) { -%>
-    <picture>
-      <% if ( image.m.webp ) { -%>
-        <source data-srcset="<%= `${image.m.webpPath}` %>.webp?<%= hash(8) %>" type="image/webp" media="(max-width: 428px)">
-      <% } -%>
-      <% if ( image.m.path ) { -%>
-        <source data-srcset="<%= `${image.m.path}?${hash(8)}` %>" media="(max-width: 428px)">
-      <% } -%>
-      <% if ( image.p.webp ) { -%>
-        <source data-srcset="<%= `${image.p.webpPath}` %>.webp?<%= hash(8) %>" type="image/webp">
-      <% } -%>
+  <picture>
+    <% if ( image.m.webp ) { -%>
+    <source data-srcset="<%= `${image.m.webpPath}` %>.webp?<%= hash(8) %>" type="image/webp" media="(max-width: 428px)">
     <% } -%>
-        <img src="<%= require('common/lazyload.png') %>" data-src="<%= `${image.p.path}?${hash(8)}` %>" class="<%- typeof style !== 'undefined' && typeof style.img !== 'undefined' ? `${style.img} ` : '' %>lazy" alt="<%- alt %> | <%- process.env.PROJECT_NAME %>" width="100%" height="100%">
+    <% if ( image.m.path ) { -%>
+    <source data-srcset="<%= `${image.m.path}?${hash(8)}` %>" media="(max-width: 428px)">
+    <% } -%>
+    <% if ( image.p.webp ) { -%>
+    <source data-srcset="<%= `${image.p.webpPath}` %>.webp?<%= hash(8) %>" type="image/webp">
+    <% } -%>
+    <% } -%>
+    <img src="<%= require('common/lazyload.png') %>" data-src="<%= `${image.p.path}?${hash(8)}` %>" class="<%- typeof style !== 'undefined' && typeof style.img !== 'undefined' ? `${style.img} ` : '' %>lazy" alt="<%- alt %> | <%- process.env.PROJECT_NAME %>" width="100%" height="100%">
     <% if ( image.m.path || image.p.webp || image.m.webp ) { -%>
-      </picture>
-    <% } -%>
-</figure>
+  </picture>
+  <% } -%>
+  </figure>

@@ -14,15 +14,15 @@ window.PetiteVue.createApp({
   onInit() {
     const vm = this;
 
-    vm.data = 'Home Init!!';
+    vm.data = 'Work Init!!';
   },
   async mounted() {
     const vm = this;
     lazyLoadFun();
     vm.onInit();
+
     // loading 開始
     store.load.init();
-    
 
     // 如果有 api 可以使用 async await
 

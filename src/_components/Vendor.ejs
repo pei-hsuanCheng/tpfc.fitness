@@ -1,13 +1,13 @@
-
-<%
-  const crypto = require('crypto');
-  const hash = length => {
-    const btoa = crypto.createHash('md5').update((+new Date() + '')).digest('hex');
-    return btoa.split('').reverse().slice(0, length).join('');
-  };
-%>
+<% const crypto = require('crypto'); -%>
+<% const hash = (length) => { 
+  const btoa = crypto.createHash('md5').update((+new Date() + '')).digest('hex');
+  return btoa.split('').reverse().slice(0, length).join(''); }; 
+-%>
 <% if ( process.env.COMMON_PLUGINS || htmlWebpackPlugin.options.plugins ) { -%>
-  <% const plugins = {...process.env.COMMON_PLUGINS, ...htmlWebpackPlugin.options.plugins} -%>
+  <% const plugins = {
+    ...process.env.COMMON_PLUGINS,
+    ...htmlWebpackPlugin.options.plugins}
+  -%>
   <% Object.keys(plugins).forEach((key) => { -%>
     <%
       const oriSrc = plugins[key]
@@ -16,8 +16,8 @@
       const fullhashLength = regex.test(oriSrc) ? /\[fullhash:(\d+)\]/.exec(oriSrc)[1] : 0
       const src = oriSrc.replace(/\.js\?/, `.${extension}?`).replace(regex, hash(fullhashLength))
     -%>
-    <script src="<%- src %>"></script>
-  <% }); -%>
+<script src="<%- src %>"></script>
+<% }); -%>
 <% } -%>
 <% if ( process.env.BUILD_JS_EXTENSION ) { -%>
   <% const chunks = htmlWebpackPlugin.options.chunks -%>
