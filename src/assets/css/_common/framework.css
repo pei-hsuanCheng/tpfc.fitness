@@ -1,8 +1,7 @@
 html,
 body {
   text-size-adjust: none;
-
-  @apply font-body;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 em,

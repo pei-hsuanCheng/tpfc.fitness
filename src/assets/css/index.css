@@ -1,1 +1,6 @@
-@import "_library";
+@import url("_library");
+
+.kv {
+  background: linear-gradient(138deg, rgba(50 77 101 / 70%) 0%, rgba(0 0 0 / 90%) 100%), url('@imgs/index/kv.jpg') center 30%;
+  background-size: 100% auto;
+}

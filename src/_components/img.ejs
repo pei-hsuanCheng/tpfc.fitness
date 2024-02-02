@@ -1,70 +1,71 @@
 <%
   const crypto = require('crypto');
+  const newPath = {
+    p: typeof path === 'object' ? path.p : path,
+    m: typeof path === 'object'
+          ? typeof path.m !== 'undefined'
+              ? path.m
+              : null
+          : /(\?|\&)(mobile)(\&|$)/.test(path)
+              ? path
+              : null
+  };
   const hash = length => {
     const btoa = crypto.createHash('md5').update((+new Date() + '')).digest('hex');
     return btoa.split('').reverse().slice(0, length).join('');
   };
-  const isPathObject = (typeof path === 'object')
-  const props = {
-    path: {
-      p: isPathObject ? path.p : path,
-      m: isPathObject
-        ? path.m
-        : /(\?|\&)(mobile)(\&|$)/.test(path)
-          ? path
-          : null
-    }
-  }
-  // const newPath = {
-  //   p: typeof path === 'object' ? path.p : path,
-  //   m: typeof path === 'object'
-  //         ? typeof path.m !== 'undefined'
-  //             ? path.m
-  //             : null
-  //         : /(\?|\&)(mobile)(\&|$)/.test(path)
-  //             ? path
-  //             : null
-  // };
-  
-  const image = {
+  const img = {
         p : {
-            path: /.*(?=\?.*$)/.test(props.path.p) ? /.*(?=\?.*$)/.exec(props.path.p) : props.path.p,
-            webpPath: props.path.p ? /^.*(?=\.)/.exec(props.path.p) : null,
-            webp: props.path.p ? /(\?|\&)(webp)(\&|$)/.test(props.path.p) : null
+            path: /.*(?=\?.*$)/.test(newPath.p) ? /.*(?=\?.*$)/.exec(newPath.p)[0] : newPath.p,
+            webpPath: newPath.p ? /^.*(?=\.)/.exec(newPath.p)[0] : null,
+            webp: newPath.p ? /(\?|\&)(webp)(\&|$)/.test(newPath.p) : null
         },
         m : {
-            path: props.path.m
-                  ? /(\?|\&)(mobile)/.test(props.path.m)
-                    ? /.*(?=\?.*$)/.exec(props.path.m).replace(/\./, '_m.')
-                    : props.path.m
+            path: newPath.m
+                  ? /(\?|\&)(mobile)(\&|$)/.test(newPath.m)
+                    ? newPath.m
+                      ? /.*(?=\?.*$)/.exec(newPath.m)[0].replace(/\./, '_m.')
+                      : null
+                    : newPath.m
+                      ? /.*(?=\?.*$)/.exec(newPath.m)[0]
+                      : null
                   : null,
-            webpPath: props.path.m
-                      ? /(\?|\&)(mobile)/.test(props.path.m)
-                          ? (/^.*(?=\.)/.exec(props.path.m) + '_m')
-                          : /^.*(?=\.)/.exec(props.path.m)
+            webpPath: newPath.m
+                      ? /(\?|\&)(mobile)(\&|$)/.test(newPath.m)
+                          ? newPath.m
+                            ? (/^.*(?=\.)/.exec(newPath.m)[0] + '_m')
+                            : null
+                          : newPath.m
+                            ? /^.*(?=\.)/.exec(newPath.m)[0]
+                            : null
                       : null,
-            webp: props.path.m
-                  ? /(?=[?&#]).*(mobile|webp)$/.test(props.path.m)
-                  : false
+            webp: newPath.m
+                  ? newPath.m
+                    ? /(\?|\&)(webp|mobile)\&(webp|mobile)$/.test(newPath.m)
+                    : null
+                  : newPath.m
+                    ? /\?webp$/.test(newPath.m)
+                    : null
                     
         }
     };
 -%>
 <figure<%- typeof style !== 'undefined' && style.main !== 'undefined' ? ` class="${ style.main }"` : '' %>>
-  <% if ( image.m.path || image.p.webp || image.m.webp ) { -%>
-  <picture>
-    <% if ( image.m.webp ) { -%>
-    <source data-srcset="<%= `${image.m.webpPath}` %>.webp?<%= hash(8) %>" type="image/webp" media="(max-width: 428px)">
+  <%  %>
+  <% if ( img.m.path || img.p.webp || img.m.webp ) { -%>
+    <picture>
+      <% if ( img.m.webp ) { -%>
+        <source data-srcset="<%= img.m.webpPath %>.webp?<%= hash(8) %>" type="image/webp" media="(max-width: 428px)">
+      <% } -%>
+      <% if ( img.m.path ) { -%>
+        <source data-srcset="<%= img.m.path %>" media="(max-width: 428px)">
+      <% } -%>
+      <% if ( img.p.webp ) { -%>
+        <source data-srcset="<%= img.p.webpPath %>.webp?<%= hash(8) %>" type="image/webp">
+      <% } -%>
     <% } -%>
-    <% if ( image.m.path ) { -%>
-    <source data-srcset="<%= `${image.m.path}?${hash(8)}` %>" media="(max-width: 428px)">
+        <img class="<%- typeof style !== 'undefined' && typeof style.img !== 'undefined' ? `${style.img} ` : '' %>lazy" alt="<%- alt %> | <%- process.env.PROJECT_NAME %>" width="100%" height="100%" src="<%= img.p.path %>?<%= hash(8) %>">
+    <% if ( img.m.path || img.p.webp || img.m.webp ) { -%>
+      </picture>
     <% } -%>
-    <% if ( image.p.webp ) { -%>
-    <source data-srcset="<%= `${image.p.webpPath}` %>.webp?<%= hash(8) %>" type="image/webp">
-    <% } -%>
-    <% } -%>
-    <img src="<%= require('common/lazyload.png') %>" data-src="<%= `${image.p.path}?${hash(8)}` %>" class="<%- typeof style !== 'undefined' && typeof style.img !== 'undefined' ? `${style.img} ` : '' %>lazy" alt="<%- alt %> | <%- process.env.PROJECT_NAME %>" width="100%" height="100%">
-    <% if ( image.m.path || image.p.webp || image.m.webp ) { -%>
-  </picture>
-  <% } -%>
-  </figure>
+</figure>

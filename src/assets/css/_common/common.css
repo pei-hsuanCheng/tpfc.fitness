@@ -1,0 +1,4 @@
+.bg-gdt {
+  background: rgb(50 77 101);
+  background: linear-gradient(138deg, rgb(50 77 101 / 100%) 0%, rgb(0 0 0 / 100%) 100%);  
+}

@@ -33,12 +33,18 @@
     <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
     <link rel="canonical" href="<%- activityURL %>">
     <link rel="alternate" href="<%- activityURL %>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="l-wrap flex flex-col min-h-screen tm:overflow-hidden jWrap" @vue:mounted="mounted">
       <!-- Header Start -->
-      <div class="l-hd flex-shrink-0 p:flex p:items-center p:justify-center top-0 sticky z-[3] jQ-hd"> 
+      <div class="l-hd flex-shrink-0 top-0 sticky z-[3] jQ-hd"> 
         <%- require('@component/mHd.ejs')() %>
+        <%- require('@component/mMarquee.ejs')({
+          txt: '凡首次購買，一對一私教人教練課 <b>5+1</b> 堂 <b>4,000</b> 元，完課期間到館自主訓練免費'
+        }) %>
       </div>
       <!-- Header End -->
       <!-- Content Start -->

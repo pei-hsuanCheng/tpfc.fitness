@@ -6,46 +6,34 @@
 -%>
 <% if ( typeof link !== 'undefined'  ) { -%>
   <a href="<%- link %>" <%- props.target -%> class="m-btn<%- typeof style !== 'undefined' && typeof style.main !== 'undefined' ? ` ${style.main}` : '' %>" @click="<%- typeof func !== 'undefined' ? `${func}` : '' %>">
-    <div class="m-btn-cnt <%- style.wrap %>">
-      <% if ( typeof ico !== 'undefined' && ico.type === 'svg' ) { -%>
-        <%- require('svg.ejs')({
-          svgName: ico.name,
-          style: {
-            main: ico.css
-          }
-        }) %>
-      <% } else if ( typeof ico !== 'undefined' && ico.type === 'img' ) { -%>
-        <%- require('img.ejs')({
-          path: ico.path,
-          alt: ico.alt,
-          style: {
-            main: ico.css
-          }
-        }) %>
-      <% } -%>
-      <em class="m-btn-txt <%- style.txt %>"><%- label %></em>
+    <div class="m-btn-cnt flex items-center justify-center relative<%- typeof style !== 'undefined' && typeof style.wrap !== 'undefined' ? ` ${style.wrap}` : '' %>">
+      <em class="m-btn-txt<%- typeof style !== 'undefined' && typeof style.txt !== 'undefined' ? ` ${style.txt}` : '' %>"><%- label %></em>
     </div>
+    <% if ( typeof icon !== 'undefined' ) { -%>
+      <span class="m-btn-icon<%- typeof style !== 'undefined' && typeof style.icon !== 'undefined' ? ` ${style.icon}` : '' %>">
+        <%- require('svg.ejs')({
+          svgName: icon.name,
+          style: {
+            main: icon.css
+          }
+        }) %>
+      </span>
+    <% } -%>
   </a>
 <% } else { -%>
   <button type="<%- type %>" class="m-btn<%- typeof style !== 'undefined' && typeof style.main !== 'undefined' ? ` ${style.main}` : '' %>" @click="<%- typeof func !== 'undefined' ? `${func}` : '' %>"<%- typeof disable !== 'undefined' && disable ? ' disabled' : '' %>>
-    <div class="m-btn-cnt flex items-center justify-center relative<%- style.wrap %>">
-      <% if ( typeof ico !== 'undefined' && ico.type === 'svg' ) { -%>
-        <%- require('svg.ejs')({
-          svgName: ico.name,
-          style: {
-            main: ico.css
-          }
-        }) %>
-      <% } else if ( typeof ico !== 'undefined' && ico.type === 'img' ) { -%>
-        <%- require('img.ejs')({
-          path: ico.path,
-          alt: ico.alt,
-          style: {
-            main: ico.css
-          }
-        }) %>
-      <% } -%>
-      <em class="m-btn-txt <%- style.txt %>"><%- label %></em>
+    <div class="m-btn-cnt flex items-center justify-center relative<%- typeof style !== 'undefined' && typeof style.wrap !== 'undefined' ? ` ${style.wrap}` : '' %>">
+      <em class="m-btn-txt<%- typeof style !== 'undefined' && typeof style.txt !== 'undefined' ? ` ${style.txt}` : '' %>"><%- label %></em>
     </div>
+    <% if ( typeof icon !== 'undefined' ) { -%>
+      <span class="m-btn-icon<%- typeof style !== 'undefined' && typeof style.icon !== 'undefined' ? ` ${style.icon}` : '' %>">
+        <%- require('svg.ejs')({
+          svgName: icon.name,
+          style: {
+            main: icon.css
+          }
+        }) %>
+      </span>
+    <% } -%>
   </button>
 <% } -%>

@@ -16,11 +16,12 @@ export const svgRequire = (req) => {
   });
 };
 
-export const lazyLoadFun = () =>
-  new LazyLoad({
+export const lazyLoadFun = () => {
+  return new LazyLoad({
     elements_selector: '.lazy',
     use_native: true,
   });
+}
 
 /* device */
 export const deviceType = () => {

@@ -1,0 +1,15 @@
+.m-marquee {
+  @apply flex justify-center bg-[var(--xe120)] text-[var(--white)];
+}
+
+@screen p {
+  .m-marquee {
+    @apply text-[18px] py-[12px];
+  }
+}
+
+@screen tm {
+  .m-marquee {
+    @apply text-center text-[22px] p-[16px];
+  }
+}
