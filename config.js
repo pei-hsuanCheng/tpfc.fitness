@@ -5,7 +5,7 @@ module.exports = {
   ieVersion: 10, // 10 或 0
   projectName: 'first class 頭等倉運動空間',
   copyright: 'FIRST CLASS FITNESS © 2022 ALL RIGHT RESERVED.',
-  desktopMinWidth: 1366,
+  desktopMinWidth: 1920,
   mobileMaxWidth: 740,
   basicMobileWidth: 375,
   copyStatic: true,

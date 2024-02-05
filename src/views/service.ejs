@@ -1,10 +1,10 @@
 <section class="overflow-hidden bg-[var(--x15)] flex tm:flex-col items-center p:max-h-[345px]">
-  <h2 class="text-center text-[var(--white)] p:w-[48%] font-black p:text-[38px] tm:text-[28px] tm:py-[20px]">service<br/>服務項目</h2>
+  <h2 class="text-center text-[var(--white)] p:w-[48%] font-black p:text-[38px] t:text-[42px] m:text-[28px] t:py-[50px] m:py-[20px]">service<br/>服務項目</h2>
   <%- require('img.ejs')({
     path: require('@imgs/service/firstclass_fitness_indoor.jpg'),
     alt : '室內環境',
     style: {
-      main: 'p:w-full p:h-full tm:w-[375px] tm:h-[180px]',
+      main: 'p:w-full p:h-full t:hidden m:w-[375px] m:h-[180px]',
       img: 'object-cover object-center'
     }
   }) %>
@@ -28,10 +28,10 @@
     </div>
   </div>
 </section>
-<section class="text-[var(--white)] bg-[var(--x15)] p:p-[60px] tm:p-[20px]">
+<section class="text-[var(--white)] bg-[var(--x15)] p:p-[60px] t:p-[40px] m:p-[20px]">
   <div class="p:mx-auto p:w-[820px]">
     <h3 class="font-bold p:text-[38px] p:mb-[70px] tm:text-[28px] tm:mb-[20px]">頭等倉課程特色</h3>
-    <ul class="p:space-y-[68px] tm:space-y-[40px]">
+    <ul class="p:space-y-[68px] t:max-w-[480px] t:space-y-[30px] m:space-y-[40px]">
       <li class="p:flex" v-for="item, index in store.service">
         <h4 class="font-bold p:flex-grow text-[24px] tm:mb-[10px]">{{item.title}}</h4>
         <p class="p:flex-shrink-0 p:w-[43%] p:text-[16px] tm:text-[13px]">{{item.cnt}}</p>
