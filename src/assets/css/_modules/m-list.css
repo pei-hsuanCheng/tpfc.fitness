@@ -1,0 +1,15 @@
+.m-list {
+  &.\-\-order {
+    list-style-type: none;
+    counter-reset: order 0;
+
+    > li {
+      counter-increment: order 1;
+
+      &::before {
+        content: counter(order) ". ";
+  
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import '@css/about.css';
+import '@css/contact.css';
 
 import { svgRequire, lazyLoadFun } from '_prototype.js';
 import store from '_store.js';

@@ -6,26 +6,32 @@ module.exports = window.PetiteVue.reactive({
       {
         label: '首頁',
         url: '/index.html',
+        navShow: false
       },
       {
         label: '課程項目',
         url: '/service.html',
+        navShow: true
       },
       {
         label: '人才招募',
         url: '/careers.html',
+        navShow: true
       },
       {
         label: '教練團隊',
         url: '/ourteam.html',
+        navShow: true
       },
       {
         label: '預約諮詢',
         url: '/contact.html',
+        navShow: true
       },
       {
         label: '交通資訊',
         url: '/information.html',
+        navShow: true
       },
     ],
     onClick(e) {
@@ -105,4 +111,105 @@ module.exports = window.PetiteVue.reactive({
       vm.isDone = true;
     },
   },
+  service: [
+    {
+      title: '私人教練課程',
+      cnt: '1V1.1V2專屬健身教學課程，針對您的體能狀況量身訂做適合您的訓練模式、課表，在安全的範圍內做最有效的訓練。'
+    },
+    {
+      title: '運動矯正與評估',
+      cnt: '使用動作評估確認肌肉失衡，找出過度使用及使用不足的肌肉，協助判斷該放鬆的肌群與該加強的部位，提供您最適合的運動方向。'
+    },
+    {
+      title: '團體課程',
+      cnt: 'First Class 提供各種肌力為取向的團體課程，為運動增添多元性，團體訓練也可以透過互相激勵養成持續運動的好習慣。'
+    },
+  ],
+  careers: [
+    '對First Class Fitness 有高度認同，能長期投入為志向',
+    '能獨立上課，有教學觀念',
+    'Sense！不將就醜的事物',
+    '喜歡團隊溝通，喜歡一起幹大事的港覺',
+    '如有幾張健身相關證照很加分'
+  ],
+  jobs: [
+    {
+      title: '健身顧問',
+      cnt: [
+        '健身方案介紹，協助客戶參觀場館環境',
+        '招募學員，推廣最新的健身專業資訊',
+        '追蹤潛在客戶，瞭解客戶需求'
+      ]
+    },
+    {
+      title: '健身教練',
+      cnt: [
+        '提供會員一對一專業健身諮詢服務',
+        '規劃並教授會員專屬課程',
+        '指導會員正確使用健身器材'
+      ]
+    },
+    {
+      title: '櫃檯客服專員',
+      cnt: [
+        '學員接待服務、合約諮詢、審核應收帳務',
+        '學員資料庫系統使用、管理',
+        '販售商品及內部備品之進銷存管理'
+      ]
+    },
+  ],
+  traning: [
+    {
+      title: '專業諮詢評估',
+      cnt: '透過初步的諮詢了解您的運動目標與動機，<br/>制定您的訓練目標。'
+    },
+    {
+      title: '規劃專屬課程',
+      cnt: '根據您的目標，規劃專屬於您的訓練。'
+    },
+    {
+      title: '安全性把關',
+      cnt: '根據您在執行訓練計畫的過程中，會依據您的訓練品質<br class="tm:hidden"/>去調整您的課表，在安全的狀態下把關每一次的訓練。'
+    },
+  ],
+  coach: [
+    {
+      name: 'Benson',
+      job: '創辦人/體能教練',
+      img: require('ourteam/coach_benson.jpg'),
+    },
+    {
+      name: 'Travis',
+      job: '營運長/體能教練',
+      img: require('ourteam/coach_travis.jpg'),
+    },
+    {
+      name: 'Allen',
+      job: '體能教練',
+      img: require('ourteam/coach_allen.jpg'),
+    },
+    {
+      name: 'Alex',
+      job: '體能教練',
+      img: require('ourteam/coach_alex.jpg'),
+    },
+  ],
+  information: [
+    {
+      title: '場館位置',
+      cnt: '台北市中山區中山北路二段128巷32號1樓'
+    },
+    {
+      title: 'PARKING 鄰近停車資訊',
+      cnt: '城市車旅停車場 (捷運民權西路站停車場) 步行至場館約 3 分鐘<br/>成淵高中地下停車場步行至場館約 5 分鐘'
+    },
+    {
+      title: 'MRT 大眾運輸交通資訊',
+      cnt: '捷運民權西路站一號出口 步行約3分鐘'
+    },
+    {
+      title: '營業時間: <br class="p:hidden"/>週一至週六 下午 01:00 至 晚上 10:00',
+      cnt: 'EMAIL: <a href="mailto:tpfc.fit@gmail.com" class="underline font-bold">tpfc.fit@gmail.com</a><br/>聯絡電話：<a class="underline font-bold" href="tel:+886-2-25222330">02-2522-2330</a>'
+    },
+  ]
 });

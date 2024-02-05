@@ -49,7 +49,7 @@
       <!-- Header End -->
       <!-- Content Start -->
       <div class="l-main flex flex-grow">
-        <div class="l-content flex-grow overflow-hidden relative" v-if="store.load.isDone">
+        <div class="l-content flex-grow overflow-hidden relative bg-[var(--black)]" v-if="store.load.isDone">
           <%- reqFile %>
         </div>
         <%- require('@component/mLoading.ejs')({

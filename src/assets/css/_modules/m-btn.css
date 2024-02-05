@@ -1,5 +1,17 @@
 .m-btn {
-  @apply flex justify-between border border-solid border-[var(--white)] font-bold text-[var(--white)] text-center;
+  @apply flex justify-between font-bold text-center border border-solid border-[var(--white)];
+  
+  &.\-\-contain {
+    @apply text-[var(--black)];
+
+    .m-btn-cnt {
+      @apply bg-[#fff] bg-opacity-100;
+    }
+  }
+
+  &.\-\-border {
+    @apply text-[var(--white)];
+  }
 }
 
 .m-btn-cnt {
@@ -24,8 +36,18 @@
 
   .m-btn {
     &:hover {
-      .m-btn-cnt {
-        @apply bg-[#fff] text-[var(--black)];
+      &.\-\-border {
+        .m-btn-cnt {
+          @apply bg-[#fff] text-[var(--black)];
+        }
+      }
+
+      &.\-\-contain {
+        @apply bg-opacity-0 text-[var(--white)];
+
+        .m-btn-cnt {
+          @apply bg-opacity-0 text-[var(--white)];
+        }
       }
     }
   }

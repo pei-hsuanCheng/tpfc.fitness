@@ -1,0 +1,15 @@
+@import url("_library");
+
+.contact-bd {
+  background: url('@imgs/contact/kv.jpg') center center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+@screen tm {
+  .contact-bd {
+    background: url('@imgs/contact/kv.jpg') center center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  }
+}

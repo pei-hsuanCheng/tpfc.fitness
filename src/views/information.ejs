@@ -1,0 +1,16 @@
+<section class="p:pt-[20px] text-[var(--white)] bg-[var(--black)] flex tm:flex-col items-center tm:py-[30px] tm:px-[20px]">
+  <div class="text-center p:w-1/4 tm:sr-only">
+    <h2 class="inline-block p:rotate-[270deg] p:text-left leading-[1.2] font-black p:text-[40px]">交通資訊</h2>
+  </div>
+  <div class="p:border-l-[1px] border-solid border-[var(--white)] p:w-3/4 ">
+    <div class="mx-auto p:w-[454px] p:mb-[80px]">
+      <h3 class="font-bold p:text-[26px] p:mb-[40px] tm:text-[24px] tm:mb-[20px]">FIRST CLASS FITNESS<br/>頭等倉運動空間 中山店</h3>
+      <ul class="p:space-y-[36px] tm:space-y-[16px]">
+        <li v-for="item in store.information">
+          <h3 class="font-bold p:mb-[12px] p:text-[18px] tm:text-[20px]" v-html="item.title"></h3>
+          <p class="p:text-[16px] tm:text-[14px]" v-html="item.cnt"></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

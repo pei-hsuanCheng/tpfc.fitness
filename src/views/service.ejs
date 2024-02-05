@@ -1,4 +1,41 @@
-<div class="h-full flex flex-col items-center justify-center">
-  <p class="text-[30px]">About</p>
-  <p>{{ data }}</p>
-</div>
+<section class="overflow-hidden bg-[var(--x15)] flex tm:flex-col items-center p:max-h-[345px]">
+  <h2 class="text-center text-[var(--white)] p:w-[48%] font-black p:text-[38px] tm:text-[28px] tm:py-[20px]">service<br/>服務項目</h2>
+  <%- require('img.ejs')({
+    path: require('@imgs/service/firstclass_fitness_indoor.jpg'),
+    alt : '室內環境',
+    style: {
+      main: 'p:w-full p:h-full tm:w-[375px] tm:h-[180px]',
+      img: 'object-cover object-center'
+    }
+  }) %>
+</section>
+<section class="text-[var(--white)] bg-[var(--black)] p:p-[60px] tm:p-[30px]">
+  <div class="p:mx-auto p:w-[900px]">
+    <h3 class="font-bold p:text-[38px] p:mb-[30px] tm:text-[30px] tm:mb-[22px]">關於頭等倉品牌<br/>About First Class Fitness</h3>
+    <div class="p:flex">
+      <div class="p:w-1/2 p:text-[14px] tm:pb-[10px]">
+        <p class="p:mb-[20px] tm:mb-[32px]">FIRST CLASS 的三角鐵，以『人』的字樣發跡，象徵健身創廠， 對於未來人類體適能進化所抱持的遠見與野心。三角點代表著， 從人體核心穩定，分支強化『肌力』『體力』『耐力』之意， 經過後天調整訓練，得到強健的基因，向上適應更高強度的外力。</p>
+        <p>The triangle of FIRST CLASS, with the word "human", symbolizes the vision and ambition of the fitness industry and the future evolution of human fitness. The triangle point represents the stability of the core of the human body, and the branches strengthen the meaning of "muscle strength", "physical strength" and "endurance". After adjustment and training the day after tomorrow, you will get strong genes and adapt to higher- intensity external forces.</p>
+      </div>
+      <%- require('img.ejs')({
+        path: require('@imgs/service/firstclass_fitness_equipment.jpeg'),
+        alt : '健身訓練器材',
+        style: {
+          main: 'p:ml-[70px] p:w-[363px] p:h-[363px]',
+          img: 'object-cover object-center'
+        }
+      }) %>
+    </div>
+  </div>
+</section>
+<section class="text-[var(--white)] bg-[var(--x15)] p:p-[60px] tm:p-[20px]">
+  <div class="p:mx-auto p:w-[820px]">
+    <h3 class="font-bold p:text-[38px] p:mb-[70px] tm:text-[28px] tm:mb-[20px]">頭等倉課程特色</h3>
+    <ul class="p:space-y-[68px] tm:space-y-[40px]">
+      <li class="p:flex" v-for="item, index in store.service">
+        <h4 class="font-bold p:flex-grow text-[24px] tm:mb-[10px]">{{item.title}}</h4>
+        <p class="p:flex-shrink-0 p:w-[43%] p:text-[16px] tm:text-[13px]">{{item.cnt}}</p>
+      </li>
+    </ul>
+  </div>
+</section>
