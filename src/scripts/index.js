@@ -12,7 +12,6 @@ svgRequire();
 
 window.PetiteVue.createApp({
   store, // 加入 store
-  data: '',
   onInit() {
     AOS.init({
       offset: 120,
@@ -21,8 +20,6 @@ window.PetiteVue.createApp({
       once: true
     });
     const vm = this;
-
-    vm.data = 'Home Init!!';
   },
   async mounted() {
     const vm = this;
