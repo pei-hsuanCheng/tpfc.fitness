@@ -1,9 +1,30 @@
 @import url("_library");
 
 .kv {
-  background: linear-gradient(138deg, rgba(50 77 101 / 70%) 0%, rgba(0 0 0 / 90%) 100%), url('@imgs/index/kv.jpg') center 30%;
+  background: linear-gradient(138deg, rgba(50 77 101 / 85%) 0%, rgba(0 0 0 / 100%) 100%), url('@imgs/index/kv.jpg') center 30%;
   background-size: 100% auto;
   background-repeat: no-repeat;
+}
+
+.kv-title {
+  animation: neon-effect 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-effect {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+    0 0 6px rgb(202 228 225 / 92%),
+    0 0 30px rgb(202 228 225 / 34%),
+    0 0 12px rgb(30 132 242 / 52%),
+    0 0 21px rgb(30 132 242 / 92%),
+    0 0 34px rgb(30 132 242 / 78%),
+    0 0 54px rgb(30 132 242 / 92%);
+  }
+
+  20%, 24%, 55% {        
+    text-shadow: none;
+    box-shadow: none;
+  }   
 }
 
 @screen tm {

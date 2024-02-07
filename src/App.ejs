@@ -35,7 +35,7 @@
     <link rel="alternate" href="<%- activityURL %>" />
   </head>
   <body>
-    <div class="l-wrap flex flex-col min-h-screen tm:overflow-hidden jWrap" @vue:mounted="mounted">
+    <div class="l-wrap flex flex-col min-h-screen tm:overflow-hidden bg-[var(--black)] jWrap" @vue:mounted="mounted">
       <!-- Header Start -->
       <div class="l-hd flex-shrink-0 top-0 sticky z-[3] jQ-hd"> 
         <%- require('@component/mHd.ejs')() %>
@@ -45,7 +45,7 @@
       </div>
       <!-- Header End -->
       <!-- Content Start -->
-      <div class="l-main flex flex-grow">
+      <div data-aos="fade-in" class="l-main flex flex-grow">
         <div class="l-content flex-grow overflow-hidden relative bg-[var(--black)]" v-if="store.load.isDone">
           <%- reqFile %>
         </div>

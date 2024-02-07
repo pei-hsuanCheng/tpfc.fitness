@@ -1,3 +1,5 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import '@css/contact.css';
 
 import { svgRequire, lazyLoadFun } from '_prototype.js';
@@ -10,6 +12,12 @@ window.PetiteVue.createApp({
   store, // 加入 store
   data: '',
   onInit() {
+    AOS.init({
+      offset: 120,
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
     const vm = this;
 
     vm.data = 'About Init!!';
