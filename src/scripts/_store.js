@@ -45,12 +45,12 @@ module.exports = window.PetiteVue.reactive({
     {
       icon: 'logo_fb',
       label: 'Facebook',
-      url: 'https://www.facebook.com/tpfc.fit',
+      url: 'https://www.facebook.com/profile.php?id=61558998428490',
     },
     {
       icon: 'logo_ig',
       label: 'Instagram',
-      url: 'https://www.instagram.com/tpfc.fit/',
+      url: 'https://www.instagram.com/tpfc.fitness/',
     },
     {
       icon: 'logo_tiktok',
@@ -75,15 +75,15 @@ module.exports = window.PetiteVue.reactive({
   post: [
     {
       img: require('index/ig_post_campaign.jpg'),
-      alt: '9999 包月一對一教練活動',
-      link: 'https://www.instagram.com/p/C0tQ-ubPsrp',
-      cnt: '想要密集訓練成大隻佬卻因為荷包受限沒辦法瘋狂約教練課訓練嗎?或是終於看不下去團結一塊的腹肌想要拼命甩肉但擔心自己撐不完那麼多堂教練課而卻步嗎?<br>頭等倉機長聽到你們的心聲了!<br>這次我們要給你一個全新的訓練模式——30天不限堂數、不指定教練的1對1重訓課程💪<br>來吧!讓我們燃燒我們對健身的熱情，認真投入在這30天中吧🔥🔥🔥<br>月票頭等倉乘客：NT$9999（課堂數不限）<br><br>活動時間:2023/12/12～2024/02/28'
+      alt: '限時免費專業教練體驗課都在幹嘛?',
+      link: 'https://www.instagram.com/p/C9Ho822v99i/?img_index=1',
+      cnt: '認真想要改變卻不知道該怎麼開始❓<br/>健身一陣子身材卻沒什麼改變❓<br/>訓練都不確定動作對不對、心裡不踏實❓<br/><br/>那就來頭等倉的免費體驗課💪<br/>讓專業的教練幫助你：<br/>✅身體狀況評估<br/>✅客製化訓練安排<br/>✅動作姿態矯正<br/>✅建立正確健身觀念<br/>體驗課裡的1小時只有滿滿知識 沒有推銷、沒有廢話💪<br/>只需花1小時就能讓你的健身之路少走幾個彎路<br/><br/>免費體驗數量有限<br/>📝快到主頁填寫體驗表單<br/>💬或私訊小盒子搶先預約🔥🔥🔥'
     },
     {
       img: require('index/ig_post_promote.jpg'),
-      alt: '新生五堂 4000 元方案',
-      link: 'https://www.instagram.com/p/Cqe_ge7BCGw',
-      cnt: '隨著疫情的解封，大家都開始踏出家門，往戶外活動。<br/>在緊接著來到的夏天，<br/>如果你想要雕刻自己的身材、少走一點冤望路、少花一些冤枉錢...<br>歡迎你來到頭等倉運動空間!<br/>每個你下定決心要踏出家門飛行的時刻，都是最好的時刻。<br/>原價：5堂NT$7500<br/>首次頭等艙乘客：5堂NT$4000（一人限一次）<br/>點擊IG首頁連結報名成為我們的首飛乘客'
+      alt: '新生優惠 10 堂 8000 方案',
+      link: 'https://www.instagram.com/p/C5f63_0PYkb/',
+      cnt: '我只是個健身小白，不需要買到那麼貴的教練課...<br/>一週只練 1~2 次，要買會籍又要買教練課實在負擔不起...<br/>教練...！我只是想健身啊....！！<br/>三井壽同學！頭等倉都聽到啦！！<br/><br/>🔥現正推出前 10 堂課體驗價 8000 元活動🔥<br/>不綁會籍、不強迫推銷，只想要你愛上運動！<br/>❓不確定自己能不能愛上健身的同學<br/>❓只是想買幾堂課調整動作的同學<br/>❓想要把基礎打好，未來自己上健身房的同學<br/>這個方案就是為了你們誕生的！！！<br/><br/>想要和bro、好閨蜜一起健身？<br/>沒問題！我們也有一對二的教練課喔🙌<br/>👉快到主頁連結🔗填寫免費體驗表單 每日預約數量有限，快手刀報名🔥🔥🔥'
     },
     {
       img: require('index/ig_post_rent.jpg'),
@@ -114,33 +114,33 @@ module.exports = window.PetiteVue.reactive({
   service: [
     {
       title: '私人教練課程',
-      cnt: '1V1.1V2專屬健身教學課程，針對您的體能狀況量身訂做適合您的訓練模式、課表，在安全的範圍內做最有效的訓練。'
+      cnt: '1V1、1V2專屬健身教學課程，針對您的體能狀況與期望目標量身訂製適合您的訓練模式與課表，在安全的範圍內做到最有效的訓練。'
     },
     {
       title: '運動矯正與評估',
       cnt: '使用動作評估確認肌肉失衡，找出過度使用及使用不足的肌肉，協助判斷該放鬆的肌群與該加強的部位，提供您最適合的運動方向。'
     },
     {
-      title: '團體課程',
-      cnt: 'First Class 提供各種肌力為取向的團體課程，為運動增添多元性，團體訓練也可以透過互相激勵養成持續運動的好習慣。'
+      title: '場地租借',
+      cnt: 'First Class 提供重訓空間與按摩床予自由教練，可依照個人狀況選擇單堂或月租模式，有需要請至 <a src="https://www.instagram.com/tpfc.fitness/">instagram</a> 或 Line 官方私訊預約。'
     },
   ],
   careers: [
     '對First Class Fitness 有高度認同，能長期投入為志向',
     '能獨立上課，有教學觀念',
-    'Sense！不將就醜的事物',
-    '喜歡團隊溝通，喜歡一起幹大事的港覺',
-    '如有幾張健身相關證照很加分'
+    '喜歡團隊溝通，有責任心，喜歡一起幹大事的感覺',
+    '如有幾張健身相關證照很加分',
+    '有點潔癖更好',
   ],
   jobs: [
-    {
-      title: '健身顧問',
-      cnt: [
-        '健身方案介紹，協助客戶參觀場館環境',
-        '招募學員，推廣最新的健身專業資訊',
-        '追蹤潛在客戶，瞭解客戶需求'
-      ]
-    },
+    // {
+    //   title: '健身顧問',
+    //   cnt: [
+    //     '健身方案介紹，協助客戶參觀場館環境',
+    //     '招募學員，推廣最新的健身專業資訊',
+    //     '追蹤潛在客戶，瞭解客戶需求'
+    //   ]
+    // },
     {
       title: '健身教練',
       cnt: [
@@ -149,14 +149,14 @@ module.exports = window.PetiteVue.reactive({
         '指導會員正確使用健身器材'
       ]
     },
-    {
-      title: '櫃檯客服專員',
-      cnt: [
-        '學員接待服務、合約諮詢、審核應收帳務',
-        '學員資料庫系統使用、管理',
-        '販售商品及內部備品之進銷存管理'
-      ]
-    },
+    // {
+    //   title: '櫃檯客服專員',
+    //   cnt: [
+    //     '學員接待服務、合約諮詢、審核應收帳務',
+    //     '學員資料庫系統使用、管理',
+    //     '販售商品及內部備品之進銷存管理'
+    //   ]
+    // },
   ],
   traning: [
     {
@@ -175,23 +175,23 @@ module.exports = window.PetiteVue.reactive({
   coach: [
     {
       name: 'Benson',
-      job: '創辦人/體能教練',
+      job: '創辦人/體能教練/健力專項/動作矯正',
       img: require('ourteam/coach_benson.jpg'),
     },
     {
-      name: 'Travis',
-      job: '營運長/體能教練',
-      img: require('ourteam/coach_travis.jpg'),
-    },
-    {
       name: 'Allen',
-      job: '體能教練',
+      job: '體能教練/健美專項',
       img: require('ourteam/coach_allen.jpg'),
     },
     {
       name: 'Alex',
-      job: '體能教練',
+      job: '體能教練/健美專項',
       img: require('ourteam/coach_alex.jpg'),
+    },
+    {
+      name: 'Roy',
+      job: '體能教練/健力專項',
+      img: require('ourteam/coach_roy.jpg'),
     },
   ],
   information: [

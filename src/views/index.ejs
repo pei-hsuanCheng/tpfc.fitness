@@ -72,7 +72,7 @@
   <section class="p:p-[20px] bg-[var(--black)] text-[var(--white)]">
     <h2 class="sr-only">instargram 文章</h2>
     <div class="text-center p:hidden tm:p-[40px]">
-      <a href="https://www.instagram.com/tpfc.fit" target="_blank" rel="noopener" class="block overflow-hidden rounded-full w-[90px] h-[90px] mx-auto mb-[10px] border border-solid border-[var(--white)]">
+      <a href="https://www.instagram.com/tpfc.fitness/" target="_blank" rel="noopener" class="block overflow-hidden rounded-full w-[90px] h-[90px] mx-auto mb-[10px] border border-solid border-[var(--white)]">
         <%- require('img.ejs')({
           path: require('@imgs/index/ig_profile.jpg'),
           alt : 'instagram image',
@@ -82,12 +82,12 @@
           }
         }) %>
       </a>
-      <a href="https://www.instagram.com/tpfc.fit" target="_blank" rel="noopener" class="text-[20px] text-[var(--white)]">
-        tpfc.fit
+      <a href="https://www.instagram.com/tpfc.fitness/" target="_blank" rel="noopener" class="text-[20px] text-[var(--white)]">
+        tpfc.fitness
       </a>
       <%- require('@component/mBtn.ejs')({
         label: 'Follow us',
-        link: 'https://www.instagram.com/tpfc.fit',
+        link: 'https://www.instagram.com/tpfc.fitness/',
         style: {
           main: '--border mt-[30px] tm:w-[205px] tm:h-[45px] tm:mx-auto',
           icon: 'w-[45px]'
@@ -99,7 +99,7 @@
       }) %>
     </div>
     <ul class="flex flex-wrap tm:p-[4px]">
-      <li v-for="item, index in store.post" class="p-[4px] p:w-1/4 tm:w-1/2">
+      <li v-for="item, index in store.post" class="p-[4px] p:w-1/4 tm:w-1/2 overflow-hidden">
         <a :href="item.link" target="_blank" rel="noopener" class="m-post relative">
           <figure class="w-full h-full">
             <img class="object-cover object-center lazy" :alt="`${item.alt} | first class 頭等倉運動空間`" :src="item.img">
