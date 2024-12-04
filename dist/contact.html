@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <meta property="og:title" content="預約諮詢、一對一私人教練課體驗 | First Class 頭等倉運動空間">
+    <meta property="og:description" name="description" content="對於增肌減脂、體態雕塑、肌力訓練、健美、健力有需求的您，歡迎填寫First Class 頭等倉運動空間表單、預約一對一私人教練課體驗健身氛圍。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tpfc-finess.com">
+    <meta property="og:image" content="https://tpfc-finess.comstatic/img/FB_share.png">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="預約諮詢、一對一私人教練課體驗 | First Class 頭等倉運動空間">
+    <title>預約諮詢、一對一私人教練課體驗 | First Class 頭等倉運動空間</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
+    <link rel="canonical" href="https://tpfc-finess.com">
+    <link rel="alternate" href="https://tpfc-finess.com" />
+    <link href="assets/css/contact.css?fd669efc" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="l-wrap flex flex-col min-h-screen tm:overflow-hidden bg-[var(--black)] jWrap" @vue:mounted="mounted">
+      <div class="l-hd flex-shrink-0 top-0 sticky z-[3] jQ-hd">
+        <header class="m-hd p:h-[72px] p:px-[20px] t:px-[15px] m:px-[10px] tm:h-[70px] w-full flex items-center bg-[var(--black)]">
+          <h1 class="flex-grow flex items-center"><a href="/" class="m-hd-logo pt:inline-block m:flex m:items-center" rel="noopener" data-aos="fade-in"><svg class="text-[var(--white)] p:w-[260px] p:h-[55px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]">
+                <use class="fill-current" xlink:href="#logo_sub"></use>
+              </svg> <em class="sr-only">first class 頭等倉運動空間</em></a></h1>
+          <div class="m-nav flex flex-row-reverse items-center text-center pt:flex-shrink-0"><button type="button" class="m-nav-btn relative p:hidden tm:block h-[40px] w-[40px] flex-shrink-0 z-10" :class="{'active': store.nav.active}" @click="store.nav.onClick"><i></i></button>
+            <div class="m-nav-bd tm:absolute tm:right-0 tm:top-0 tm:h-screen tm:w-full tm:flex tm:justify-center tm:overflow-hidden tm:bg-[var(--black)] tm:transition-all tm:duration-300 tm:ease-in-out" :class="[store.nav.active ? 'tm:translate-x-0 tm:z-[5]' : 'tm:translate-x-full']">
+              <ul class="flex tm:flex-col items-center tm:justify-center">
+                <li class="p:px-[10px] text-[var(--white)] tm:py-[18px]" v-for="item, index in store.nav.items"><a v-if="item.navShow" :href="item.url" class="t:text-[28px] m:text-[24px] tracking-[-0.1em]" :class="{'tm:underline tm:underline-offset-8': store.nowPage === item.url}">{{ item.label }}</a></li>
+              </ul>
+            </div>
+          </div>
+        </header>
+        <div class="m-marquee"><em>凡首次購買，一對一私教人教練課 <b>10</b> 堂 <b>8,000</b> 元，完課期間到館自主訓練免費</em></div>
+      </div>
+      <div data-aos="fade-in" class="l-main flex flex-grow">
+        <div class="l-content flex-grow overflow-hidden relative bg-[var(--black)]" v-if="store.load.isDone">
+          <section class="overflow-hidden text-[var(--white)] bg-[var(--black)] flex tm:flex-col p:items-center p:max-h-[345px] p:border-b-[1px] border-solid border-[var(--white)]">
+            <div class="p:w-2/3 tm:order-2 tm:border-y-[1px] border-solid border-[var(--x6)]">
+              <div class="mx-auto p:max-w-[490px]">
+                <h2 data-aos="fade-right" class="leading-[1.2] font-black p:text-[40px] p:mb-[30px] tm:text-center t:text-[42px] m:text-[26px] t:py-[50px] m:py-[34px]">COME AND JOIN US<br />與頭等倉一同啟程</h2>
+              </div>
+            </div>
+            <div class="p:w-1/3 t:hidden m:order-1 p:border-l-[1px] border-solid border-[var(--white)]">
+              <figure class="w-full h-full"><img class="object-cover object-center lazy" alt="槓片陳設 | first class 頭等倉運動空間" width="100%" height="100%" src="assets/img/contact/firstclass_fitness_equipments.jpeg?80e6fba0"></figure>
+            </div>
+          </section>
+          <section class="contact-bd flex justify-center items-center p:p-[60px] p:min-h-[650px] tm:px-[20px] tm:py-[40px]">
+            <div data-aos="fade-in" class="text-[var(--white)] bg-[var(--black)] p:p-[80px] p:min-w-[600px] p:min-h-[400px] p:max-w-[800px] text-center tm:p-[20px]">
+              <h3 class="font-bold leading-none p:text-[48px] p:mb-[20px] tm:text-[32px] tm:mb-[14px]">預約諮詢、體驗</h3>
+              <p class="p:text-[15px] tm:text-[16px]">​若對於頭等倉運動空間有任何建議，<br class="p:hidden" />歡迎來信至 <a href="mailto:tpfc.fit@gmail.com" class="underline font-bold p:text-[18px]">tpfc.fit@gmail.com</a><br />若有任何合作方案、異業結盟、公關申請等，也歡迎至場館或來信與我們聯繫。</p><i class="block border-[1px] border-solid border-[var(--white)] p:mt-[10px] p:mb-[20px] tm:mt-[16px] tm:mb-[20px]"></i>
+              <p class="font-bold p:mb-[10px] p:text-[18px] tm:text-[16px] tm:mb-[12px]">若想快速預約體驗<br />▼ 請填寫送出下方表單 ▼</p><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSenm1W9oA_bHL_zbAMs4fedYuzPiFC8eAOnCz3toDMG3wbGRw/viewform?embedded=true" class="pt:w-[640px] pt:h-[400px] m:w-[340px] m:h-[500px]" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+            </div>
+          </section>
+        </div>
+        <div class="m-loading pt:py-[40px] m:py-[30px] mx-auto flex flex-col items-center justify-center fixed" v-if="!store.load.isDone"><svg class="m-loading-svg pt:w-[120px] pt:h-[120px] m:w-[80px] m:h-[80px] fill-current text-[#b3ce2b]" viewBox="0 0 48 48">
+            <circle cx="24" cy="4" r="4" />
+            <circle cx="12.19" cy="7.86" r="3.7" class="opacity-90" />
+            <circle cx="5.02" cy="17.68" r="3.4" class="opacity-80" />
+            <circle cx="5.02" cy="30.32" r="3.1" class="opacity-70" />
+            <circle cx="12.19" cy="40.14" r="2.8" class="opacity-60" />
+            <circle cx="24" cy="44" r="2.5" class="opacity-50" />
+            <circle cx="35.81" cy="40.14" r="2.2" class="opacity-40" />
+            <circle cx="42.98" cy="30.32" r="1.9" class="opacity-30" />
+            <circle cx="42.98" cy="17.68" r="1.6" class="opacity-20" />
+            <circle cx="35.81" cy="7.86" r="1.3" class="opacity-10" />
+          </svg></div>
+      </div>
+      <div class="l-ft flex-shrink-0 relative">
+        <footer class="m-ft bg-[var(--x15)] p:px-[50px] p:pt-[50px] tm:px-[40px] tm:pt-[30px] text-[var(--white)]">
+          <div class="p:flex p:justify-between p:pl-[30px]">
+            <div class="tm:flex tm:flex-col tm:items-center p:w-[270px] tm:mb-[50px]"><a href="/" class="m-hd-logo p:inline-block m:flex m:items-center p:mb-[18px] tm:mb-[16px]" rel="noopener"><svg class="text-[var(--white)] p:w-[260px] p:h-[55px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]">
+                  <use class="fill-current" xlink:href="#logo_sub"></use>
+                </svg> <em class="sr-only">first class 頭等倉運動空間</em></a>
+              <p data-aos="fade-in" class="text-[12px] p:mb-[22px] tm:mb-[30px]">追蹤我們的社群媒體，每週都會有實質的內容與教學，降低更多的運動傷害，讓我們同步更好的訓練效益！</p><a data-aos="fade-right" href="https://docs.google.com/forms/d/e/1FAIpQLSdyIMF1EHcdkUKsr6EY7b3o6dQgXuQfB6XiKzTJqid_7FO0Bg/viewform" target="_blank" rel="noopener" class="m-btn --border text-[18px] p:w-[144px] p:h-[38px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]" @click="">
+                <div class="m-btn-cnt flex items-center justify-center relative"><em class="m-btn-txt">即刻預約</em></div>
+              </a>
+            </div>
+            <div>
+              <ul class="flex tm:flex-wrap">
+                <li data-aos="fade-in" class="p:mx-[40px] tm:w-1/2">
+                  <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">網站導覽</h5>
+                  <ul>
+                    <li v-for="item, index in store.nav.items"><a :href="item.url" class="pt:text-[14px] m:text-[12px]">{{ item.label }}</a></li>
+                  </ul>
+                </li>
+                <li data-aos="fade-in" class="p:mx-[40px] tm:w-1/2">
+                  <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">社群媒體</h5>
+                  <ul>
+                    <li><a href="https://www.facebook.com/tpfc.fit" class="pt:text-[14px] m:text-[12px]"><svg class="inline w-[16px] h-[16px] text-[var(--xc7)]">
+                          <use class="fill-current" xlink:href="#logo_fb"></use>
+                        </svg> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/tpfc.fitness/" class="pt:text-[14px] m:text-[12px]"><svg class="inline w-[16px] h-[16px] text-[var(--xc7)]">
+                          <use class="fill-current" xlink:href="#logo_ig"></use>
+                        </svg> Instagram</a></li>
+                    <li><a href="http://www.tiktok.com/@tpcf.fit" class="pt:text-[14px] m:text-[12px]"><svg class="inline w-[16px] h-[16px] text-[var(--xc7)]">
+                          <use class="fill-current" xlink:href="#logo_tiktok"></use>
+                        </svg> TikTok</a></li>
+                  </ul>
+                </li>
+                <li data-aos="fade-in" class="p:mx-[40px] tm:w-full tm:mt-[20px]">
+                  <ul class="tm:flex">
+                    <li class="tm:w-1/2">
+                      <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">營業時間</h5>
+                      <p class="pt:text-[14px] m:text-[12px]">週一至週六（周日公休）</p>
+                      <p class="pt:text-[14px] m:text-[12px]">下午 01 : 00 ~<br class="p:hidden">晚上 10 : 00</p>
+                    </li>
+                    <li class="p:mt-[40px] tm:w-1/2">
+                      <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">地址電話</h5><a class="block p:mb-[4px] tm:mb-[10px] pt:text-[14px] m:text-[12px]" href="tel:+886-2-25222330">(02)2522-2330</a> <a class="pt:text-[14px] m:text-[12px]" href="https://maps.app.goo.gl/XJrhGD2UgVfA9BrC6" target="_blank" rel="noopener">
+                        <p class="leading-tight">104015<br>台北市中山區中山北路二段128巷32號1F</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div><small class="m-ft-copyright block py-[24px] text-center text-[13px] m:px-[20px]">FIRST CLASS FITNESS © 2022 ALL RIGHT RESERVED.</small>
+        </footer>
+      </div>
+    </div>
+    <div class="l-n-sup">
+      <div class="m-n-sup">
+        <div class="m-n-sup-hd">
+          <p class="m-n-sup-title"><b>很抱歉，您目前使用的瀏覽器無法支援瀏覽。</b></p>
+          <p class="m-n-sup-description">建議您提升瀏覽器使用版本為 IE 10 (含) 以上，或使用其他瀏覽器軟體 Google Chrome、Firefox 以獲得最佳瀏覽體驗，謝謝您的配合。</p>
+        </div>
+        <div class="m-n-sup-bd">
+          <div class="m-n-sup-msg">
+            <p class="m-n-sup-msg-tit"><b>相關說明</b></p>
+            <div class="m-n-sup-item">
+              <p class="m-n-sup-item-title"><b>我如果不升級對於瀏覽上會有什麼影響？</b></p>
+              <p class="m-n-sup-item-cnt">使用 IE 10 版本下的瀏覽器瀏覽本網站，可能部分網頁的呈現會有破圖或版面跑版的情況，某些網頁互動功能無法正確顯示與使用。</p>
+            </div>
+            <div class="m-n-sup-item">
+              <p class="m-n-sup-item-tit"><b>我要如何升級我的瀏覽器？</b></p>
+              <p class="m-n-sup-item-cnt">請您點擊以下連結，下載並升級您的 IE 瀏覽器，或下載 Google Chrome、Firefox 瀏覽器。</p>
+            </div>
+          </div>
+          <div class="m-n-sup-fig-list">
+            <ul>
+              <li><a href="https://www.microsoft.com/zh-tw/edge?form=MA13DG&amp;ocid=SMCIEDownload10-Download" class="m-n-sup-fig --edge">
+                  <p class="m-n-sup-description">Microsoft Edge</p>
+                </a></li>
+              <li><a href="https://www.google.com.tw/chrome/browser/desktop/" class="m-n-sup-fig --chrome">
+                  <p class="m-n-sup-description">Google Chrome</p>
+                </a></li>
+              <li><a href="https://www.mozilla.org/zh-TW/firefox/new/" class="m-n-sup-fig --firefox">
+                  <p class="m-n-sup-description">Mozilla Firefox</p>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="m-n-sup-ft">
+          <div class="m-n-sup-copyright">
+            <p class="m-n-sup-info">FIRST CLASS FITNESS © 2022 ALL RIGHT RESERVED.</p>
+            <p class="m-n-sup-browser">IE 10+, Chrome, Safari, Firefox</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="static/scripts/plugin/jquery-3.7.0.min.js?53fb879d"></script>
+    <script src="static/scripts/plugin/petite-vue@0.4.1/petite-vue.iife.js?53fb879d"></script>
+    <script defer="defer" src="scripts/contact.js?fd669efc"></script>
+  </body>
+
+</html>
