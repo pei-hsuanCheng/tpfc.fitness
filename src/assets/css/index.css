@@ -1,17 +1,22 @@
 @import url("_library");
 
 .kv {
-  background: linear-gradient(138deg, rgba(50 77 101 / 85%) 0%, rgba(0 0 0 / 100%) 100%), url('@imgs/index/kv.jpg') center 30%;
+  background: rgb(21 35 45 / 85%);
   background-size: 100% auto;
   background-repeat: no-repeat;
+  transition: 0.3s ease-in-out all;
+
+  &:hover{
+    background: rgb(37 58 73 / 85%);
+  }
 }
 
 .kv-title {
-  animation: neon-effect 1.5s ease-in-out infinite alternate;
+  animation: neon-effect 4s ease-in-out infinite alternate;
 }
 
 @keyframes neon-effect {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+  0%, 13.5%, 15%, 16.5%, 17.8%, 38.5%, 40%, 100% {
     text-shadow:
     0 0 6px rgb(202 228 225 / 92%),
     0 0 30px rgb(202 228 225 / 34%),
@@ -21,7 +26,7 @@
     0 0 54px rgb(30 132 242 / 92%);
   }
 
-  20%, 24%, 55% {        
+  14.2%, 17.1%, 39.2% {        
     text-shadow: none;
     box-shadow: none;
   }   
@@ -29,7 +34,7 @@
 
 @screen tm {
   .kv {
-    background: linear-gradient(138deg, rgba(50 77 101 / 70%) 0%, rgba(0 0 0 / 90%) 100%), url('@imgs/index/kv.jpg') 80% center;
+    background: rgb(21 35 45 / 85%), url('@imgs/index/kv.jpg') 80% center;
     background-size: auto 100%;
     background-repeat: no-repeat;
   }

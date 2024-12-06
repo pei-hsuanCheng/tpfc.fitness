@@ -1,5 +1,7 @@
 import AOS from 'aos';
+import tns from 'tiny-slider';
 import 'aos/dist/aos.css';
+import 'tiny-slider/dist/tiny-slider.css';
 import '@css/index.css';
 
 import { svgRequire, lazyLoadFun } from '_prototype.js';
@@ -20,6 +22,7 @@ window.PetiteVue.createApp({
       easing: 'ease-in-out',
       once: true
     });
+    // tns();
     const vm = this;
 
     vm.data = 'Home Init!!';

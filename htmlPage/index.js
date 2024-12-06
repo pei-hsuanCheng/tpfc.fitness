@@ -6,14 +6,21 @@ module.exports = {
     description: 'First Class 頭等倉運動空間推出多元運動為方向的規劃，除了一對一私人教練課、體態評估、團體課程等，也歡迎自由教練場租，另提供教練新媒體行銷推廣。',
     chunks: ['index']
   }, {
-    title: '私人教練課、體態評估、場租、教練新媒體行銷推廣',
+    title: '關於我們',
+    filename: 'about.html',
+    template: 'App.ejs',
+    action: 'about',
+    description: 'First Class 頭等倉運動空間，不受限於健身房和健身概念，我們的目標是讓每一位學生培養出運動的興趣，除了重訓，功能性訓練、增肌減脂、體態雕塑都是我們擅長的項目。',
+    chunks: ['about']
+  }, {
+    title: '私人教練課',
     filename: 'service.html',
     template: 'App.ejs',
     action: 'service',
-    description: 'First Class 頭等倉運動空間推出多元運動為方向的規劃，除了一對一私人教練課、體態評估、團體課程等，也歡迎自由教練場租，另提供教練新媒體行銷推廣。',
+    description: 'First Class 頭等倉運動空間推出多元運動為方向的規劃，除了一對一及一對二私人教練課，也歡迎自由教練場租。',
     chunks: ['service']
   }, {
-    title: '我們就是在找你! 教練招募',
+    title: '教練招募',
     filename: 'careers.html',
     template: 'App.ejs',
     action: 'careers',
@@ -27,14 +34,14 @@ module.exports = {
     description: 'First Class 頭等倉運動空間目前有四位教練，對於增肌減脂、體態雕塑、肌力訓練、健美、健力都保持著專業知識，不斷精進自我能力，只為了提供學生更安全有效率的健身教學內容。',
     chunks: ['ourteam']
   }, {
-    title: '預約諮詢、一對一私人教練課體驗',
+    title: '教練課預約體驗',
     filename: 'contact.html',
     template: 'App.ejs',
     action: 'contact',
-    description: '對於增肌減脂、體態雕塑、肌力訓練、健美、健力有需求的您，歡迎填寫First Class 頭等倉運動空間表單、預約一對一私人教練課體驗健身氛圍。',
+    description: '對於增肌減脂、體態雕塑、肌力訓練、健美、健力有需求的您，歡迎填寫 First Class 頭等倉運動空間體驗表單、預約一對一私人教練課體驗健身氛圍。',
     chunks: ['contact']
   }, {
-    title: '交通資訊',
+    title: '交通與環境',
     filename: 'information.html',
     template: 'App.ejs',
     action: 'information',
