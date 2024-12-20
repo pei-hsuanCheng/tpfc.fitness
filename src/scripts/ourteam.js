@@ -1,10 +1,10 @@
 import AOS from 'aos';
-import tns from 'tiny-slider';
+import {tns} from 'tiny-slider/src/tiny-slider';;
 import 'aos/dist/aos.css';
 import 'tiny-slider/dist/tiny-slider.css';
 import '@css/index.css';
 
-import { svgRequire, lazyLoadFun } from '_prototype.js';
+import { svgRequire, lazyLoadFun, deviceType } from '_prototype.js';
 import store from '_store.js';
 
 // const $ = window.jQuery;
@@ -15,6 +15,7 @@ svgRequire();
 window.PetiteVue.createApp({
   store, // 加入 store
   data: '',
+  slider: null,
   onInit() {
     AOS.init({
       offset: 120,
@@ -22,16 +23,7 @@ window.PetiteVue.createApp({
       easing: 'ease-in-out',
       once: true
     });
-    // tns({
-    //   container: '.coach-slider',
-    //   items: 3,
-    //   slideBy: 'page',
-    //   autoplay: true,
-    //   controls: false,
-    //   nav: false
-    // });
     const vm = this;
-
     vm.data = 'Home Init!!';
   },
   async mounted() {
@@ -40,11 +32,34 @@ window.PetiteVue.createApp({
     vm.onInit();
     // loading 開始
     store.load.init();
-    
-
-    // 如果有 api 可以使用 async await
-
     // loading 結束
     store.load.finish();
+    vm.windowResize()
+    window.addEventListener('resize', vm.windowResize);
   },
+  windowResize() {
+    const vm = this;
+    this.$nextTick(() => {
+      if(vm.slider && vm.slider.destroy) vm.slider.destroy();
+      if(deviceType()!=='p') {
+        vm.slider = tns({
+          container: '.coach-slider',
+          items: 1,
+          slideBy: 'page',
+          autoplay: false,
+          edgePadding: 40,
+          gutter: 20,
+          controlsContainer: '.m-slider-ctrl',
+          nav: false,
+          responsive: {
+            740: {
+              items: 2,
+              edgePadding: 60,
+              gutter: 40
+            }
+          }
+        });
+      }
+    })
+  }
 }).mount('.jWrap');
