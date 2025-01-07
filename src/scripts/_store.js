@@ -5,37 +5,37 @@ module.exports = window.PetiteVue.reactive({
     items: [
       {
         label: '首頁',
-        url: '/index.html',
+        url: './index.html',
         navShow: false
       },
       {
         label: '免費體驗',
-        url: '/contact.html',
+        url: './contact.html',
         navShow: true
       },
       {
         label: '關於我們',
-        url: '/about.html',
+        url: './about.html',
         navShow: true
       },
       {
         label: '課程項目',
-        url: '/service.html',
+        url: './service.html',
         navShow: true
       },
       {
         label: '教練團隊',
-        url: '/ourteam.html',
+        url: './ourteam.html',
         navShow: true
       },
       {
         label: '交通與環境',
-        url: '/information.html',
+        url: './information.html',
         navShow: true
       },
       {
         label: '人才招募',
-        url: '/careers.html',
+        url: './careers.html',
         navShow: true
       },
     ],

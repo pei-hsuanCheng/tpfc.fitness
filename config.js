@@ -11,7 +11,7 @@ module.exports = {
   copyStatic: true,
   docker: false,
   https: true,
-  rootDirectory: 'auto',
+  rootDirectory: '/tpfc.fitness/',
   jsMinifyExclude: /\/static/,
   buildJSExtension: null,
   component: '_components/',
