@@ -118,24 +118,27 @@ module.exports = window.PetiteVue.reactive({
   },
   service: [
     {
-      title: '私人教練課程',
-      cnt: '1V1、1V2專屬健身教學課程，針對您的體能狀況與期望目標量身訂製適合您的訓練模式與課表，在安全的範圍內做到最有效的訓練。'
+      title: '一對一私人教練課程 ',
+      cnt: '我們的一對一私人教練課程為你提供專屬的健身計劃，讓每一次的訓練都精準符合你的個人需求。無論你是健身初學者，還是希望進一步提升體能的資深運動愛好者，我們的專業教練都會根據你的身體狀況、健康目標，以及個人偏好，量身定制一套完美的訓練方案。<br>從力量訓練、有氧運動到靈活性和平衡的提升，每個環節都將經過精心規劃和調整，確保你在安全的環境中達到最佳效果。我們的專業教練不僅提供技術指導，更是你再健身路上的策略顧問和好朋友，陪伴你一步步向目標前進。',
+      imgs: [require('@imgs/service/firstclass_fitness_equipment.jpeg'), require('@imgs/service/firstclass_fitness_equipment.jpeg'), require('@imgs/service/firstclass_fitness_equipment.jpeg')]
     },
     {
-      title: '運動矯正與評估',
-      cnt: '使用動作評估確認肌肉失衡，找出過度使用及使用不足的肌肉，協助判斷該放鬆的肌群與該加強的部位，提供您最適合的運動方向。'
+      title: '一對二小組訓練課程',
+      cnt: '想要和你的好閨蜜一起甩肉瘦身蛻變成全新的自我嗎？快來加入我們的一對二小組訓練課程，和好友一起開啟人生的新篇章！在這個專為朋友間設計的課程裡，你們可以共同揮灑汗水，享受每一次突破的喜悅。<br>無論你們希望燃燒脂肪、增強肌力，還是雕塑身形，我們都將依據你們的需求量身定制訓練計劃。多樣的設施和器械讓你們的健身之旅更加豐富多彩，絕不無聊單調！<br><br><span class="italic">*小提醒：一對二較適合程度相似者一起上課，若某一方肌力較差，另一方結束後較不會有訓練感唷‼</span>',
+      imgs: [require('@imgs/service/firstclass_fitness_equipment.jpeg'), require('@imgs/service/firstclass_fitness_equipment.jpeg'), require('@imgs/service/firstclass_fitness_equipment.jpeg')]
     },
     {
-      title: '場地租借',
-      cnt: 'First Class 提供重訓空間與按摩床予自由教練，可依照個人狀況選擇單堂或月租模式，有需要請至 <a href="https://www.instagram.com/tpfc.fitness/" target="_blank" class="underline font-bold">instagram</a> 或 <a href="https://line.me/R/ti/p/@936ccniz" class="underline font-bold">Line 官方</a>私訊預約。'
+      title: '課後自主訓練',
+      cnt: '我們提供有購課的學員們在課程結束前自由使用訓練器材，貫徹我們的品牌理念—讓每一位學生不但培養出運動的興趣，更能愛上每一次運動的體驗，我們相信只要培養出興趣、適應健身房的環境與氣氛、獲得健身的基礎知識，每一位來上過課的學員都能過持之以恆的繼續健身之旅。<br>健身新手不緊張！若時間允許，巡場教練也會在學員自主訓練時適時提供協助與指導，免除初上健身房慌亂的心情。',
+      imgs: [require('@imgs/service/firstclass_fitness_equipment.jpeg'), require('@imgs/service/firstclass_fitness_equipment.jpeg'), require('@imgs/service/firstclass_fitness_equipment.jpeg')]
     },
   ],
   careers: [
-    '對First Class Fitness 有高度認同，能長期投入為志向',
-    '能獨立上課，有教學觀念',
-    '喜歡團隊溝通，有責任心，喜歡一起幹大事的感覺',
-    '如有幾張健身相關證照很加分',
-    '有點潔癖更好',
+    '對 First Class Fitness 有高度認同，有長期投入的意願🤝',
+    '有教學觀念，願意傾聽學生想法，能獨立上課者🤙',
+    '喜歡團隊溝通，有責任心，喜歡和大伙們共同朝目標努力🔥',
+    '需要至少一張健身相關證照，但有很多張更好🤩',
+    '有點潔癖超加分✨',
   ],
   jobs: [
     // {
@@ -207,22 +210,37 @@ module.exports = window.PetiteVue.reactive({
       img: require('ourteam/coach_roy.jpg'),
     },
   ],
-  information: [
-    {
-      title: '場館位置',
-      cnt: '台北市中山區中山北路二段128巷32號1樓'
-    },
-    {
-      title: 'PARKING 鄰近停車資訊',
-      cnt: '城市車旅停車場 (捷運民權西路站停車場) 步行至場館約 3 分鐘<br/>成淵高中地下停車場步行至場館約 5 分鐘'
-    },
-    {
-      title: 'MRT 大眾運輸交通資訊',
-      cnt: '捷運民權西路站一號出口 步行約3分鐘'
-    },
-    {
-      title: '營業時間: <br class="p:hidden"/>週一至週六 下午 01:00 至 晚上 10:00',
-      cnt: 'EMAIL: <a href="mailto:tpfc.fit@gmail.com" class="underline font-bold">tpfc.fit@gmail.com</a><br/>聯絡電話：<a class="underline font-bold" href="tel:+886-2-25222330">02-2522-2330</a>'
-    },
-  ]
+  information: {
+    location: [
+      {
+        title: '場館位置',
+        cnt: '台北市中山區中山北路二段128巷32號1樓'
+      },
+      {
+        title: 'PARKING 鄰近停車資訊',
+        cnt: '城市車旅停車場 (捷運民權西路站停車場) 步行至場館約 3 分鐘<br/>成淵高中地下停車場步行至場館約 5 分鐘'
+      },
+      {
+        title: 'MRT 大眾運輸交通資訊',
+        cnt: '捷運民權西路站一號出口 步行約3分鐘'
+      },
+      {
+        title: '營業時間: <br class="p:hidden"/>週一至週六 下午 01:00 至 晚上 10:00',
+        cnt: 'EMAIL: <a href="mailto:tpfc.fit@gmail.com" class="underline font-bold">tpfc.fit@gmail.com</a><br/>聯絡電話：<a class="underline font-bold" href="tel:+886-2-25222330">02-2522-2330</a>'
+      },
+    ],
+    env: [{
+      title: '頭等倉運動空間外觀',
+      img: require('common/firstclass_fitness_outdoor.jpg'),
+      cnt: '訓練區有自由重量、機械器材及啞鈴壺鈴。'
+    }, {
+      title: '內部訓練空間',
+      img: require('common/firstclass_fitness_outdoor.jpg'),
+      cnt: '訓練區有自由重量、機械器材及啞鈴壺鈴。'
+    }, {
+      title: '內部訓練空間',
+      img: require('common/firstclass_fitness_outdoor.jpg'),
+      cnt: '訓練區有自由重量、機械器材及啞鈴壺鈴。'
+    }]
+  }
 });

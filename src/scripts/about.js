@@ -1,6 +1,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import '@css/index.css';
+import '@css/about.css';
 
 import { svgRequire, lazyLoadFun } from '_prototype.js';
 import store from '_store.js';

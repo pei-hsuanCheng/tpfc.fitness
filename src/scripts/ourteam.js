@@ -1,5 +1,5 @@
 import AOS from 'aos';
-import {tns} from 'tiny-slider/src/tiny-slider';;
+import {tns} from 'tiny-slider/src/tiny-slider';
 import 'aos/dist/aos.css';
 import 'tiny-slider/dist/tiny-slider.css';
 import '@css/index.css';

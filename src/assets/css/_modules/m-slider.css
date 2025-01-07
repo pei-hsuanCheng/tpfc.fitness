@@ -2,29 +2,47 @@
   @apply relative;
 }
 
-.m-slider-ctrl {
-  @apply w-full absolute t:top-1/2 t:-translate-y-1/2 flex justify-between items-center t:px-[20px] m:px-[16px] t:mt-[-70px] m:top-[250px];
+[class^="m-slider-ctrl"] {
+  @apply w-full absolute top-1/2 -translate-y-1/2 flex justify-between items-center pt:px-[20px] m:px-[8px];
 }
 
 .m-slider-prev,
 .m-slider-next {
-  background-color: rgba(255, 255, 255, 0.3);
-  @apply relative flex justify-center items-center border-solid border-[2px] rounded-full t:w-[50px] t:h-[50px] m:w-[40px] m:h-[40px];
+  background-color: rgba(#fff, 0.3);
+  
+  @apply relative flex justify-center items-center border-[#c9c9c9] border-solid border rounded-full pt:w-[50px] pt:h-[50px] m:w-[40px] m:h-[40px];
 
   &::before {
     content: '';
     width: 20px; /* 水平线的长度 */
     height: 2px; /* 水平线的厚度 */
-    @apply absolute top-1/2 left-1/2 bg-[var(--white)] -translate-y-1/2 -translate-x-1/2 h-[2px] t:w-[20px] m:w-[16px];
+
+    @apply absolute top-1/2 left-1/2 bg-[#c9c9c9] -translate-y-1/2 -translate-x-1/2 h-[2px] pt:w-[20px] m:w-[16px];
   }
 
   &::after {
     content: '';
 
-    @apply absolute top-1/2 t:left-[40px] m:left-[36px] border-[5px] border-solid border-transparent border-l-[#fff] -translate-x-full -translate-y-1/2;
+    @apply absolute top-1/2 pt:left-[40px] m:left-[34px] border-[5px] border-solid border-transparent border-l-[#c9c9c9] -translate-x-full -translate-y-1/2;
   }
 }
 
 .m-slider-prev {
   @apply rotate-[-180deg];
+}
+
+.tns-outer {
+  @apply relative;
+}
+
+.tns-nav {
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 space-x-[4px];
+
+  &>* {
+    @apply bg-[var(--xc7)] w-[12px] h-[12px] rounded-full;
+  }
+}
+
+.tns-nav-active {
+  @apply bg-[var(--x6)]
 }

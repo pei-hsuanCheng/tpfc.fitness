@@ -1,0 +1,15 @@
+@import url("_library");
+
+.about-intro {
+  background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('@imgs/index/kv.jpg') 80% center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+@screen tm {
+  .about-intro {
+    background: rgba(21 35 45 / 85%), url('@imgs/index/kv.jpg') 80% center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+}

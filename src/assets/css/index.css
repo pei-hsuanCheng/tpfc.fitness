@@ -34,8 +34,8 @@
 
 @screen tm {
   .kv {
-    background: rgb(21 35 45 / 85%), url('@imgs/index/kv.jpg') 80% center;
-    background-size: auto 100%;
+    background: linear-gradient(rgb(21 35 45 / 85%), rgb(21 35 45 / 85%)), url('@imgs/index/kv.jpg') center center;
+    background-size: 100% auto;
     background-repeat: no-repeat;
   }
 }

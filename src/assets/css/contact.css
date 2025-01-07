@@ -2,8 +2,8 @@
 
 .contact-bd {
   background: url('@imgs/contact/kv.jpg') center center;
-  background-size: 100% auto;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @screen tm {

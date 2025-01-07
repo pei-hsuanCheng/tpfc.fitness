@@ -7,18 +7,46 @@
       path: require('@imgs/information/map.jpg'),
       alt : '頭等倉運動空間地圖位置',
       style: {
-        main: 'p:ml-[20px] p:w-[363px] p:h-[500px]',
+        main: 'p:ml-[20px] p:w-[363px] p:h-[500px] m:mb-[20px]',
         img: 'object-cover object-center'
       }
     }) %>
-    <div data-aos="fade-in" class="p:ml-[20px] p:w-[454px]">
+    <div data-aos="fade-in" class="p:ml-[20px] p:w-[454px] t:p-[30px]">
       <h3 class="font-bold p:text-[26px] p:mb-[40px] tm:text-[24px] tm:mb-[20px]">FIRST CLASS FITNESS<br/>頭等倉運動空間 中山店</h3>
-      <ul class="p:space-y-[36px] tm:space-y-[16px]">
-        <li v-for="item in store.information">
+      <ul class="m-p:space-y-[36px] tm:space-y-[16px]">
+        <li v-for="item, index in store.information.location" :key="`env_${index}`">
           <h3 class="font-bold p:mb-[4px] p:text-[18px] tm:text-[20px]" v-html="item.title"></h3>
           <p class="p:text-[16px] tm:text-[14px]" v-html="item.cnt"></p>
         </li>
       </ul>
+    </div>
+  </div>
+</section>
+<section class="text-[var(--white)] bg-[var(--x15)] p:py-[60px] t:text-center tm:py-[20px]">
+  <div data-aos="fade-up" class="p:box-content p:pl-[12vw] p:w-[580px] p:mb-[60px] t:mb-[52px] m:mb-[16px] m:px-[20px]">
+    <h3 class="font-bold p:text-[40px] tm:text-[32px] tm:mb-[4px]">頭等倉環境導覽</h3>
+    <p class="m:text-[14px]">全店共有訓練區、休息區、儲物飲水區、盥洗區及按摩室，坪數雖不大，<br class="m:hidden"> 但槓鈴、機械式或有氧器材皆有，設備齊全，打造全方位的運動空間。</p>
+  </div>
+  <div class="m-slider">
+    <ul class="env-slider">
+      <li class="slide" v-for="item in store.information.env">
+        <div class="relative">
+          <figure class="flex-shrink-0 m:h-[280px]">
+            <img class="object-cover object-right !w-full lazy" :alt="`${item.title} | first class 頭等倉運動空間`" :src="item.img">
+          </figure>
+          <div class="absolute bottom-0 left-0 w-full bg-[#000] bg-opacity-70 p:p-[24px] t:p-[16px] m:p-[12px]">
+            <p class="text-left pt:text-[16px] m:text-[14px]">{{item.cnt}}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="m-slider-ctrl">
+      <button type="button" class="m-slider-prev">
+        <span class="sr-only">prev</span>
+      </button>
+      <button type="button" class="m-slider-next">
+        <span class="sr-only">next</span>
+      </button>
     </div>
   </div>
 </section>

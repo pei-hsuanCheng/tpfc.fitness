@@ -1,10 +1,8 @@
 <footer class="m-ft bg-[var(--x15)] p:px-[50px] p:pt-[50px] tm:px-[40px] tm:pt-[30px] text-[var(--white)]">
   <div class="p:flex p:justify-between p:pl-[30px]">
     <div class="tm:flex tm:flex-col tm:items-center p:w-[270px] tm:mb-[50px]">
-      <a
-        href="/"
+      <h2
         class="m-hd-logo p:inline-block m:flex m:items-center p:mb-[18px] tm:mb-[16px]"
-        rel="noopener"
       >
         <%- require('@component/svg.ejs')({
           svgName: 'logo_sub',
@@ -15,8 +13,8 @@
         <em class="sr-only">
           <%- process.env.PROJECT_NAME %>
         </em>
-      </a>
-      <p data-aos="fade-in" class="text-[12px] p:mb-[22px] tm:mb-[30px]">追蹤我們的社群媒體，每週都會有實質的內容與教學，降低更多的運動傷害，讓我們同步更好的訓練效益！</p>
+      </h2>
+      <p data-aos="fade-in" class="tm:text-center p:text-[12px] t:text-[20px] m:text-[14px] p:mb-[22px] tm:mb-[30px]">追蹤我們的社群媒體，每週都會有實質的內容與教學，降低更多的運動傷害，讓我們同步更好的訓練效益！</p>
       <%- require('@component/mBtn.ejs')({
         label: '即刻預約',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSdyIMF1EHcdkUKsr6EY7b3o6dQgXuQfB6XiKzTJqid_7FO0Bg/viewform',
