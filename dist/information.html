@@ -11,7 +11,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
-    <meta property="og:title" content="交通資訊 | First Class 頭等倉運動空間">
+    <meta property="og:title" content="交通與環境 | First Class 頭等倉運動空間">
     <meta property="og:description" name="description" content="First Class 頭等倉運動空間位於民權西路捷運站四號出口步行約三分鐘處，附近有兩大停車場，方便的交通與地理位置，讓您不再因為距離因素而放棄健身的熱情。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tpfc-finess.com">
@@ -19,12 +19,34 @@
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="交通資訊 | First Class 頭等倉運動空間">
-    <title>交通資訊 | First Class 頭等倉運動空間</title>
+    <meta property="og:site_name" content="交通與環境 | First Class 頭等倉運動空間">
+    <title>交通與環境 | First Class 頭等倉運動空間</title>
     <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
     <link rel="canonical" href="https://tpfc-finess.com">
     <link rel="alternate" href="https://tpfc-finess.com" />
-    <link href="assets/css/information.css?fd669efc" rel="stylesheet">
+    <script>
+      ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '420754771004769');
+      fbq('track', 'PageView');
+    </script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=420754771004769&ev=PageView&noscript=1" /></noscript>
+    <link href="assets/css/information.css?9810fdd7" rel="stylesheet">
   </head>
 
   <body>
@@ -51,16 +73,35 @@
               <h2 class="inline-block p:rotate-[270deg] p:text-left leading-[1.2] font-black p:text-[40px] t:text-[52px]">交通資訊</h2>
             </div>
             <div class="p:flex p:items-center p:border-l-[1px] border-solid border-[var(--white)] p:mb-[20px] p:w-3/4 t:py-[30px]">
-              <figure class="p:ml-[20px] p:w-[363px] p:h-[500px]"><img class="object-cover object-center lazy" alt="頭等倉運動空間地圖位置 | first class 頭等倉運動空間" width="100%" height="100%" src="assets/img/information/map.jpg?5d1086ec"></figure>
-              <div data-aos="fade-in" class="p:ml-[20px] p:w-[454px]">
+              <figure class="p:ml-[20px] p:w-[363px] p:h-[500px] m:mb-[20px]"><img class="object-cover object-center lazy" alt="頭等倉運動空間地圖位置 | first class 頭等倉運動空間" width="100%" height="100%" src="assets/img/information/map.jpg?4b77e9f4"></figure>
+              <div data-aos="fade-in" class="p:ml-[20px] p:w-[454px] t:p-[30px]">
                 <h3 class="font-bold p:text-[26px] p:mb-[40px] tm:text-[24px] tm:mb-[20px]">FIRST CLASS FITNESS<br />頭等倉運動空間 中山店</h3>
-                <ul class="p:space-y-[36px] tm:space-y-[16px]">
-                  <li v-for="item in store.information">
+                <ul class="m-p:space-y-[36px] tm:space-y-[16px]">
+                  <li v-for="item, index in store.information.location" :key="`env_${index}`">
                     <h3 class="font-bold p:mb-[4px] p:text-[18px] tm:text-[20px]" v-html="item.title"></h3>
                     <p class="p:text-[16px] tm:text-[14px]" v-html="item.cnt"></p>
                   </li>
                 </ul>
               </div>
+            </div>
+          </section>
+          <section class="text-[var(--white)] bg-[var(--x15)] p:py-[60px] t:text-center tm:py-[20px]">
+            <div data-aos="fade-up" class="p:box-content p:pl-[12vw] p:w-[580px] p:mb-[60px] t:mb-[52px] m:mb-[16px] m:px-[20px]">
+              <h3 class="font-bold p:text-[40px] tm:text-[32px] tm:mb-[4px]">頭等倉環境導覽</h3>
+              <p class="m:text-[14px]">全店共有訓練區、休息區、儲物飲水區、盥洗區及按摩室，坪數雖不大，<br class="m:hidden">但槓鈴、機械式或有氧器材皆有，設備齊全，打造全方位的運動空間。</p>
+            </div>
+            <div class="m-slider">
+              <ul class="env-slider">
+                <li class="slide" v-for="item in store.information.env">
+                  <div class="relative">
+                    <figure class="flex-shrink-0 m:h-[280px]"><img class="object-cover object-right !w-full lazy" :alt="`${item.title} | first class 頭等倉運動空間`" :src="item.img"></figure>
+                    <div class="absolute bottom-0 left-0 w-full bg-[#000] bg-opacity-70 p:p-[24px] t:p-[16px] m:p-[12px]">
+                      <p class="text-left pt:text-[16px] m:text-[14px]">{{item.cnt}}</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="m-slider-ctrl"><button type="button" class="m-slider-prev"><span class="sr-only">prev</span></button> <button type="button" class="m-slider-next"><span class="sr-only">next</span></button></div>
             </div>
           </section>
         </div>
@@ -80,10 +121,11 @@
       <div class="l-ft flex-shrink-0 relative">
         <footer class="m-ft bg-[var(--x15)] p:px-[50px] p:pt-[50px] tm:px-[40px] tm:pt-[30px] text-[var(--white)]">
           <div class="p:flex p:justify-between p:pl-[30px]">
-            <div class="tm:flex tm:flex-col tm:items-center p:w-[270px] tm:mb-[50px]"><a href="/" class="m-hd-logo p:inline-block m:flex m:items-center p:mb-[18px] tm:mb-[16px]" rel="noopener"><svg class="text-[var(--white)] p:w-[260px] p:h-[55px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]">
+            <div class="tm:flex tm:flex-col tm:items-center p:w-[270px] tm:mb-[50px]">
+              <h2 class="m-hd-logo p:inline-block m:flex m:items-center p:mb-[18px] tm:mb-[16px]"><svg class="text-[var(--white)] p:w-[260px] p:h-[55px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]">
                   <use class="fill-current" xlink:href="#logo_sub"></use>
-                </svg> <em class="sr-only">first class 頭等倉運動空間</em></a>
-              <p data-aos="fade-in" class="text-[12px] p:mb-[22px] tm:mb-[30px]">追蹤我們的社群媒體，每週都會有實質的內容與教學，降低更多的運動傷害，讓我們同步更好的訓練效益！</p><a data-aos="fade-right" href="https://docs.google.com/forms/d/e/1FAIpQLSdyIMF1EHcdkUKsr6EY7b3o6dQgXuQfB6XiKzTJqid_7FO0Bg/viewform" target="_blank" rel="noopener" class="m-btn --border text-[18px] p:w-[144px] p:h-[38px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]" @click="">
+                </svg> <em class="sr-only">first class 頭等倉運動空間</em></h2>
+              <p data-aos="fade-in" class="tm:text-center p:text-[12px] t:text-[20px] m:text-[14px] p:mb-[22px] tm:mb-[30px]">追蹤我們的社群媒體，每週都會有實質的內容與教學，降低更多的運動傷害，讓我們同步更好的訓練效益！</p><a data-aos="fade-right" href="https://docs.google.com/forms/d/e/1FAIpQLSdyIMF1EHcdkUKsr6EY7b3o6dQgXuQfB6XiKzTJqid_7FO0Bg/viewform" target="_blank" rel="noopener" class="m-btn --border text-[18px] p:w-[144px] p:h-[38px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]" @click="">
                 <div class="m-btn-cnt flex items-center justify-center relative"><em class="m-btn-txt">即刻預約</em></div>
               </a>
             </div>
@@ -169,9 +211,9 @@
         </div>
       </div>
     </div>
-    <script src="static/scripts/plugin/jquery-3.7.0.min.js?3a99e07f"></script>
-    <script src="static/scripts/plugin/petite-vue@0.4.1/petite-vue.iife.js?3a99e07f"></script>
-    <script defer="defer" src="scripts/information.js?fd669efc"></script>
+    <script src="static/scripts/plugin/jquery-3.7.0.min.js?c6e4ba0e"></script>
+    <script src="static/scripts/plugin/petite-vue@0.4.1/petite-vue.iife.js?c6e4ba0e"></script>
+    <script defer="defer" src="scripts/information.js?9810fdd7"></script>
   </body>
 
 </html>
