@@ -24,7 +24,29 @@
     <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
     <link rel="canonical" href="https://tpfc-finess.com">
     <link rel="alternate" href="https://tpfc-finess.com" />
-    <link href="/tpfc.fitness/assets/css/about.css?594828f5" rel="stylesheet">
+    <script>
+      ! function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '420754771004769');
+      fbq('track', 'PageView');
+    </script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=420754771004769&ev=PageView&noscript=1" /></noscript>
+    <link href="/tpfc.fitness/assets/css/about.css?a032ec81" rel="stylesheet">
   </head>
 
   <body>
@@ -34,7 +56,7 @@
           <h1 class="flex-grow flex items-center"><a href="./" class="m-hd-logo pt:inline-block m:flex m:items-center" rel="noopener" data-aos="fade-in"><svg class="text-[var(--white)] p:w-[260px] p:h-[55px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]">
                 <use class="fill-current" xlink:href="#logo_sub"></use>
               </svg> <em class="sr-only">first class 頭等倉運動空間</em></a></h1>
-          <div class="m-nav flex flex-row-reverse items-center text-center pt:flex-shrink-0"><button type="button" class="m-nav-btn relative p:hidden tm:block h-[40px] w-[40px] flex-shrink-0 z-10" :class="{'active': store.nav.active}" @click="store.nav.onClick"><i></i></button>
+          <div class="m-nav flex flex-row-reverse items-center text-center pt:flex-shrink-0"><button aria-label="menu" type="button" class="m-nav-btn relative p:hidden tm:block h-[40px] w-[40px] flex-shrink-0 z-10" :class="{'active': store.nav.active}" @click="store.nav.onClick"><i></i></button>
             <div class="m-nav-bd tm:absolute tm:right-0 tm:top-0 tm:h-screen tm:w-full tm:flex tm:justify-center tm:overflow-hidden tm:bg-[var(--black)] tm:transition-all tm:duration-300 tm:ease-in-out" :class="[store.nav.active ? 'tm:translate-x-0 tm:z-[5]' : 'tm:translate-x-full']">
               <ul class="flex tm:flex-col items-center tm:justify-center">
                 <li class="p:px-[10px] text-[var(--white)] tm:py-[18px]" v-for="item, index in store.nav.items"><a v-if="item.navShow" :href="item.url" class="t:text-[28px] m:text-[24px] tracking-[-0.1em]" :class="{'tm:underline tm:underline-offset-8': store.nowPage === item.url}">{{ item.label }}</a></li>
@@ -48,7 +70,7 @@
         <div class="l-content flex-grow overflow-hidden relative bg-[var(--black)]" v-if="store.load.isDone">
           <section class="overflow-hidden bg-[var(--x15)] flex tm:flex-col items-center p:max-h-[345px]">
             <h2 class="text-center text-[var(--white)] p:w-[48%] font-black p:text-[38px] t:text-[42px] m:text-[28px] t:py-[50px] m:py-[20px]">About us<br />關於我們</h2>
-            <figure class="p:w-full p:h-full t:hidden m:w-[375px] m:h-[180px]"><img class="object-cover object-center lazy" alt="室內環境 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_indoor.jpg?34093f35"></figure>
+            <figure class="p:w-full p:h-full t:hidden m:w-[375px] m:h-[180px]"><img class="object-cover object-center lazy" alt="室內環境 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_indoor.jpg?a5350fca"></figure>
           </section>
           <section class="text-[var(--white)] bg-[var(--black)] p:p-[60px] t:pt-[30px] m:pt-[14px]">
             <div class="p:mx-auto p:w-[900px]">
@@ -58,14 +80,14 @@
                   <p class="p:mb-[20px] tm:mb-[32px]">FIRST CLASS 的三角鐵，以『人』的字樣發跡，象徵健身創廠， 對於未來人類體適能進化所抱持的遠見與野心。三角點代表著， 從人體核心穩定，分支強化『肌力』『體力』『耐力』之意， 經過後天調整訓練，得到強健的基因，向上適應更高強度的外力。</p>
                   <p>The triangle of FIRST CLASS, with the word "human", symbolizes the vision and ambition of the fitness industry and the future evolution of human fitness. The triangle point represents the stability of the core of the human body, and the branches strengthen the meaning of "muscle strength", "physical strength" and "endurance". After adjustment and training the day after tomorrow, you will get strong genes and adapt to higher- intensity external forces.</p>
                 </div>
-                <figure class="p:ml-[70px] p:w-[363px] p:h-[363px]"><img class="object-cover object-center lazy" alt="健身訓練器材 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_equipment.jpeg?34093f35"></figure>
+                <figure class="p:ml-[70px] p:w-[363px] p:h-[363px]"><img class="object-cover object-center lazy" alt="健身訓練器材 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_equipment.jpeg?10783b7a"></figure>
               </div>
             </div>
           </section>
           <section class="text-[var(--white)] bg-[var(--x15)] p:p-[60px] t:pt-[90px] m:pt-[30px]">
             <div class="p:mx-auto p:max-w-[1100px]">
               <div class="flex tm:flex-col-reverse">
-                <figure class="p:mr-[70px] p:w-[363px] p:h-[363px]"><img class="object-cover object-center lazy" alt="健身訓練器材 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_equipment.jpeg?34093f35"></figure>
+                <figure class="p:mr-[70px] p:w-[363px] p:h-[363px]"><img class="object-cover object-center lazy" alt="健身訓練器材 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_equipment.jpeg?10783b7a"></figure>
                 <div data-aos="fade-up" class="p:w-2/3 tm:pb-[30px] t:px-[30px] m:px-[16px]">
                   <h3 class="font-bold p:text-[38px] p:mb-[20px] tm:text-[30px] tm:mb-[22px]">品牌理念<br />Philosophy of First Class Fitness</h3>
                   <p class="p:w-2/3 p:text-[14px]">頭等倉運動空間自2022年11月開業以來，我們的目標始終是讓每一位來訪的學生不僅培養出運動的興趣，更能愛上每一次的運動體驗。 我們的專業教練們不僅技術精湛，更以無比的耐心和熱情指導每位學生。在這裡，我們提供一對一或一對二的個別訓練模式，確保每位學生都能在完全私密的環境中，獲得最專注的指導和訓練效果。<br>為了提供最專業的重訓教學，我們的課程設計純為重訓專屬，沒有提供皮拉提斯、瑜伽或其他團體課程。我們相信，專注能夠帶來最專業的成果。 此外，我們的設施只開放給學生使用，也歡迎自由教練租借場地。無論您是尋求一個靜謐的訓練空間，還是專業的個別指導，這裡都是您的最佳選擇。<br><br>加入我們，開啟你的健身之旅，一同體驗運動帶來的無限可能！</p>
@@ -107,13 +129,13 @@
             <div data-aos="fade-in">
               <ul class="flex tm:flex-wrap">
                 <li class="p:mx-[40px] tm:w-1/2">
-                  <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">網站導覽</h5>
+                  <h4 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">網站導覽</h4>
                   <ul>
                     <li v-for="item, index in store.nav.items"><a :href="item.url" class="pt:text-[14px] m:text-[12px]">{{ item.label }}</a></li>
                   </ul>
                 </li>
                 <li class="p:mx-[40px] tm:w-1/2">
-                  <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">社群媒體</h5>
+                  <h4 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">社群媒體</h4>
                   <ul>
                     <li><a href="https://www.facebook.com/tpfc.fit" class="pt:text-[14px] m:text-[12px]"><svg class="inline w-[16px] h-[16px] text-[var(--xc7)]">
                           <use class="fill-current" xlink:href="#logo_fb"></use>
@@ -129,12 +151,12 @@
                 <li class="p:mx-[40px] tm:w-full tm:mt-[20px]">
                   <ul class="tm:flex">
                     <li class="tm:w-1/2">
-                      <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">營業時間</h5>
+                      <h4 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">營業時間</h4>
                       <p class="pt:text-[14px] m:text-[12px]">週一至週六（周日公休）</p>
                       <p class="pt:text-[14px] m:text-[12px]">下午 01 : 00 ~<br class="p:hidden">晚上 10 : 00</p>
                     </li>
                     <li class="p:mt-[40px] tm:w-1/2">
-                      <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">地址電話</h5><a class="block p:mb-[4px] tm:mb-[10px] pt:text-[14px] m:text-[12px]" href="tel:+886-2-25222330">(02)2522-2330</a> <a class="pt:text-[14px] m:text-[12px]" href="https://maps.app.goo.gl/XJrhGD2UgVfA9BrC6" target="_blank" rel="noopener">
+                      <h4 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">地址電話</h4><a class="block p:mb-[4px] tm:mb-[10px] pt:text-[14px] m:text-[12px]" href="tel:+886-2-25222330">(02)2522-2330</a> <a class="pt:text-[14px] m:text-[12px]" href="https://maps.app.goo.gl/XJrhGD2UgVfA9BrC6" target="_blank" rel="noopener">
                         <p class="leading-tight">104015<br>台北市中山區中山北路二段128巷32號1F</p>
                       </a>
                     </li>
@@ -186,9 +208,9 @@
         </div>
       </div>
     </div>
-    <script src="static/scripts/plugin/jquery-3.7.0.min.js?5daa7713"></script>
-    <script src="static/scripts/plugin/petite-vue@0.4.1/petite-vue.iife.js?5daa7713"></script>
-    <script defer="defer" src="/tpfc.fitness/scripts/about.js?594828f5"></script>
+    <script src="static/scripts/plugin/jquery-3.7.0.min.js?c4cb18e1"></script>
+    <script src="static/scripts/plugin/petite-vue@0.4.1/petite-vue.iife.js?c4cb18e1"></script>
+    <script defer="defer" src="/tpfc.fitness/scripts/about.js?a032ec81"></script>
   </body>
 
 </html>
