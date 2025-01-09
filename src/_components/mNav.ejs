@@ -1,5 +1,5 @@
 <div class="m-nav flex flex-row-reverse items-center text-center pt:flex-shrink-0">
-  <button type="button" class="m-nav-btn relative p:hidden tm:block h-[40px] w-[40px] flex-shrink-0 z-10" :class="{'active': store.nav.active}" @click="store.nav.onClick">
+  <button aria-label="menu" type="button" class="m-nav-btn relative p:hidden tm:block h-[40px] w-[40px] flex-shrink-0 z-10" :class="{'active': store.nav.active}" @click="store.nav.onClick">
     <i></i>
   </button>
   <div class="m-nav-bd tm:absolute tm:right-0 tm:top-0 tm:h-screen tm:w-full tm:flex tm:justify-center tm:overflow-hidden tm:bg-[var(--black)] tm:transition-all tm:duration-300 tm:ease-in-out" :class="[store.nav.active ? 'tm:translate-x-0 tm:z-[5]' : 'tm:translate-x-full']">

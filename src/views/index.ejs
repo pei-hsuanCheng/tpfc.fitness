@@ -101,6 +101,7 @@
     <ul class="flex flex-wrap tm:p-[4px]">
       <li v-for="item, index in store.post" class="p-[4px] p:w-1/4 tm:w-1/2 overflow-hidden">
         <a :href="item.link" target="_blank" rel="noopener" class="m-post relative">
+          <h3 class="sr-only">{{ item.title }}</h3>
           <figure class="w-full h-full">
             <img class="object-cover object-center lazy" :alt="`${item.alt} | first class 頭等倉運動空間`" :src="item.img">
           </figure>
