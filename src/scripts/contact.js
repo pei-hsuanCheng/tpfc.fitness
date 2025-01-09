@@ -12,12 +12,6 @@ window.PetiteVue.createApp({
   store, // 加入 store
   data: '',
   onInit() {
-    AOS.init({
-      offset: 120,
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true
-    });
     const vm = this;
 
     vm.data = 'About Init!!';
@@ -26,13 +20,17 @@ window.PetiteVue.createApp({
     const vm = this;
     lazyLoadFun();
     vm.onInit();
-
-    // loading 開始
     store.load.init();
+    
+    setTimeout(() => {
+      AOS.init({
+        offset: 120,
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+    }, 300)
 
-    // 如果有 api 可以使用 async await
-
-    // loading 結束
     store.load.finish();
   },
 }).mount('.jWrap');

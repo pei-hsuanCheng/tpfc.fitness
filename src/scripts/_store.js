@@ -133,13 +133,21 @@ module.exports = window.PetiteVue.reactive({
       imgs: [require('@imgs/service/firstclass_fitness_equipment.jpeg'), require('@imgs/service/firstclass_fitness_equipment.jpeg'), require('@imgs/service/firstclass_fitness_equipment.jpeg')]
     },
   ],
-  careers: [
-    '對 First Class Fitness 有高度認同，有長期投入的意願🤝',
-    '有教學觀念，願意傾聽學生想法，能獨立上課者🤙',
-    '喜歡團隊溝通，有責任心，喜歡和大伙們共同朝目標努力🔥',
-    '需要至少一張健身相關證照，但有很多張更好🤩',
-    '有點潔癖超加分✨',
-  ],
+  careers: {
+    condition: [
+      '對 First Class Fitness 有高度認同，有長期投入的意願🤝',
+      '有教學觀念，願意傾聽學生想法，能獨立上課者🤙',
+      '喜歡團隊溝通，有責任心，喜歡和大伙們共同朝目標努力🔥',
+      '需要至少一張健身相關證照，但有很多張更好🤩',
+      '有點潔癖超加分✨',
+    ],
+    work: [
+      '獨立指導私人教練課程，讓學生保持對訓練的熱忱🤸‍♀️🤸‍♂️',
+      '與學生建立良好關係，用你的專業和熱情迷倒學生💗',
+      '參與社群教學，讓更多人欣賞你的專業知識🔉',
+      '值日生制度，大家一起為環境負責🧹',
+    ]
+  },
   jobs: [
     // {
     //   title: '健身顧問',
@@ -169,7 +177,7 @@ module.exports = window.PetiteVue.reactive({
   traning: [
     {
       title: '專業諮詢評估',
-      cnt: '透過初步的諮詢了解您的運動目標與動機，<br/>制定您的訓練目標。'
+      cnt: '透過初步的諮詢了解您的運動目標與動機，<br class="tm:hidden"/>制定您的訓練目標。'
     },
     {
       title: '規劃專屬課程',

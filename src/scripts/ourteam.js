@@ -1,7 +1,7 @@
-import AOS from 'aos';
 import {tns} from 'tiny-slider/src/tiny-slider';
-import 'aos/dist/aos.css';
 import 'tiny-slider/dist/tiny-slider.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import '@css/index.css';
 
 import { svgRequire, lazyLoadFun, deviceType } from '_prototype.js';
@@ -17,12 +17,6 @@ window.PetiteVue.createApp({
   data: '',
   slider: null,
   onInit() {
-    AOS.init({
-      offset: 120,
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true
-    });
     const vm = this;
     vm.data = 'Home Init!!';
   },
@@ -30,12 +24,22 @@ window.PetiteVue.createApp({
     const vm = this;
     lazyLoadFun();
     vm.onInit();
-    // loading 開始
     store.load.init();
-    // loading 結束
+
+    setTimeout(() => {
+      if(deviceType() === 'p') {
+        AOS.init({
+          offset: 120,
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true
+        });
+      }
+      vm.windowResize()
+      window.addEventListener('resize', vm.windowResize);
+    }, 300)
+
     store.load.finish();
-    vm.windowResize()
-    window.addEventListener('resize', vm.windowResize);
   },
   windowResize() {
     const vm = this;
@@ -57,6 +61,14 @@ window.PetiteVue.createApp({
               edgePadding: 60,
               gutter: 40
             }
+          },
+          onInit: () => {
+            AOS.init({
+              offset: 120,
+              duration: 800,
+              easing: 'ease-in-out',
+              once: true
+            });
           }
         });
       }

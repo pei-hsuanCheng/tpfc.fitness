@@ -1,7 +1,7 @@
-import AOS from 'aos';
 import {tns} from 'tiny-slider/src/tiny-slider';
-import 'aos/dist/aos.css';
 import 'tiny-slider/dist/tiny-slider.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import '@css/index.css';
 
 import { svgRequire, lazyLoadFun } from '_prototype.js';
@@ -16,12 +16,6 @@ window.PetiteVue.createApp({
   store, // 加入 store
   data: '',
   onInit() {
-    AOS.init({
-      offset: 120,
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true
-    });
     const vm = this;
 
     vm.data = 'Home Init!!';
@@ -30,15 +24,9 @@ window.PetiteVue.createApp({
     const vm = this;
     lazyLoadFun();
     vm.onInit();
-    // loading 開始
     store.load.init();
-    
-    
-    // 如果有 api 可以使用 async await
-    
-    // loading 結束
-    store.load.finish();
-    this.$nextTick(() => {
+
+    setTimeout(() => {
       document.querySelectorAll('[class*="class-slider-"]').forEach((elem, idx) => {
         tns({
           container: `.class-slider-${idx}`,
@@ -51,8 +39,18 @@ window.PetiteVue.createApp({
           nav: true,
           navPosition: 'bottom',
           mouseDrag: true,
+          onInit: () => {
+            AOS.init({
+              offset: 120,
+              duration: 800,
+              easing: 'ease-in-out',
+              once: true
+            });
+          }
         })
       })
-    })
+    }, 300)
+
+    store.load.finish();
   },
 }).mount('.jWrap');

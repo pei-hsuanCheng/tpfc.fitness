@@ -1,6 +1,6 @@
 <footer class="m-ft bg-[var(--x15)] p:px-[50px] p:pt-[50px] tm:px-[40px] tm:pt-[30px] text-[var(--white)]">
   <div class="p:flex p:justify-between p:pl-[30px]">
-    <div class="tm:flex tm:flex-col tm:items-center p:w-[270px] tm:mb-[50px]">
+    <div data-aos="fade-right" class="tm:flex tm:flex-col tm:items-center p:w-[270px] tm:mb-[50px]">
       <h2
         class="m-hd-logo p:inline-block m:flex m:items-center p:mb-[18px] tm:mb-[16px]"
       >
@@ -14,19 +14,18 @@
           <%- process.env.PROJECT_NAME %>
         </em>
       </h2>
-      <p data-aos="fade-in" class="tm:text-center p:text-[12px] t:text-[20px] m:text-[14px] p:mb-[22px] tm:mb-[30px]">追蹤我們的社群媒體，每週都會有實質的內容與教學，降低更多的運動傷害，讓我們同步更好的訓練效益！</p>
+      <p class="tm:text-center p:text-[12px] t:text-[20px] m:text-[14px] p:mb-[22px] tm:mb-[30px]">追蹤我們的社群媒體，每週都會有實質的內容與教學，降低更多的運動傷害，讓我們同步更好的訓練效益！</p>
       <%- require('@component/mBtn.ejs')({
         label: '即刻預約',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSdyIMF1EHcdkUKsr6EY7b3o6dQgXuQfB6XiKzTJqid_7FO0Bg/viewform',
         style: {
           main: '--border text-[18px] p:w-[144px] p:h-[38px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]'
-        },
-        fadeType: 'fade-right'
+        }
       }) %>
     </div>
-    <div>
+    <div data-aos="fade-in">
       <ul class="flex tm:flex-wrap">
-        <li data-aos="fade-in" class="p:mx-[40px] tm:w-1/2">
+        <li class="p:mx-[40px] tm:w-1/2">
           <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">網站導覽</h5>
           <ul>
             <li v-for="item, index in store.nav.items">
@@ -36,7 +35,7 @@
             </li>
           </ul>
         </li>
-        <li data-aos="fade-in" class="p:mx-[40px] tm:w-1/2">
+        <li class="p:mx-[40px] tm:w-1/2">
           <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">社群媒體</h5>
           <ul>
             <li>
@@ -74,7 +73,7 @@
             </li>
           </ul>
         </li>
-        <li data-aos="fade-in" class="p:mx-[40px] tm:w-full tm:mt-[20px]">
+        <li class="p:mx-[40px] tm:w-full tm:mt-[20px]">
           <ul class="tm:flex">
             <li class="tm:w-1/2">
               <h5 class="text-[var(--xc7)] font-bold p:mb-[8px] tm:mb-[6px] p:text-[20px] tm:text-[20px]">營業時間</h5>

@@ -24,7 +24,7 @@
 <section class="text-[var(--white)] bg-[var(--black)] p:px-[60px] pt:pb-[60px] t:w-[550px] t:mx-auto t:p-[30px] m:p-[20px] m:pb-[30px]">
   <ul class="mx-auto p:max-w-[1120px] p:space-y-[32px] t:space-y-[24px] m:space-y-[18px]">
     <li v-for="item, idx in store.service" key="item.title">
-      <div class="p:flex p:items-center bg-[var(--x15)] p:max-h-[360px] overflow-hidden">
+      <div data-aos="fade-in" class="p:flex p:items-center bg-[var(--x15)] p:max-h-[360px] overflow-hidden">
         <div class="m-slider p:w-1/2">
           <ul :class="`class-slider-${idx}`">
             <li v-for="img, index in item.imgs" :key="`${item.title}_img${index}`">
