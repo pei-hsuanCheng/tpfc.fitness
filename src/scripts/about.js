@@ -2,7 +2,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '@css/about.css';
 
-import { svgRequire, lazyLoadFun } from '_prototype.js';
+import { svgRequire, lazyLoadFun, deviceType, hdScroll } from '_prototype.js';
 import store from '_store.js';
 
 /* 一次載入使用到的 svg */
@@ -29,6 +29,7 @@ window.PetiteVue.createApp({
         easing: 'ease-in-out',
         once: true
       });
+      if(deviceType() !== 'p') hdScroll();
     }, 300)
     
     store.load.finish();

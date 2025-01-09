@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 import 'tiny-slider/dist/tiny-slider.css';
 import '@css/index.css';
 
-import { svgRequire, lazyLoadFun, deviceType } from '_prototype.js';
+import { svgRequire, lazyLoadFun, deviceType, hdScroll } from '_prototype.js';
 import store from '_store.js';
 
 // const $ = window.jQuery;
@@ -28,6 +28,7 @@ window.PetiteVue.createApp({
     store.load.init();
 
     setTimeout(() => {
+      if(deviceType() !== 'p') hdScroll();
       vm.slider = tns({
         container: '.env-slider',
         controlsContainer: '.m-slider-ctrl',

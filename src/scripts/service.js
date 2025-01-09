@@ -4,7 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '@css/index.css';
 
-import { svgRequire, lazyLoadFun } from '_prototype.js';
+import { svgRequire, lazyLoadFun, deviceType, hdScroll } from '_prototype.js';
 import store from '_store.js';
 
 // const $ = window.jQuery;
@@ -27,6 +27,7 @@ window.PetiteVue.createApp({
     store.load.init();
 
     setTimeout(() => {
+      if(deviceType() !== 'p') hdScroll();
       document.querySelectorAll('[class*="class-slider-"]').forEach((elem, idx) => {
         tns({
           container: `.class-slider-${idx}`,

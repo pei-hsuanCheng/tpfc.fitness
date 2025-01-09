@@ -4,7 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '@css/index.css';
 
-import { svgRequire, lazyLoadFun, deviceType } from '_prototype.js';
+import { svgRequire, lazyLoadFun, deviceType, hdScroll } from '_prototype.js';
 import store from '_store.js';
 
 // const $ = window.jQuery;
@@ -34,6 +34,8 @@ window.PetiteVue.createApp({
           easing: 'ease-in-out',
           once: true
         });
+      } else {
+        hdScroll();
       }
       vm.windowResize()
       window.addEventListener('resize', vm.windowResize);

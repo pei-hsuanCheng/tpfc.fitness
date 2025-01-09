@@ -1,3 +1,18 @@
-.l-wrap {
-  
+.l-hd {
+  top: 0;
+  left: 0;
+  z-index: 5;
+  transition: transform 0.3s ease-in-out;
+}
+
+.l-main {
+  @apply p:pt-[123px] t:pt-[168px] m:pt-[200px];
+}
+
+@screen tm {
+  .l-hd {
+    &.\-\-hide {
+      transform: translateY(-100%);
+    }
+  }
 }

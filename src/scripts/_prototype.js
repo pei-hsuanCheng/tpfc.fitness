@@ -53,46 +53,18 @@ export const deviceType = () => {
   return 'p'
 };
 
-export const scrollToAnimate = () => {
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const elementBottom = entry.target.getBoundingClientRect().bottom;
-        const viewportHeight = window.innerHeight;
-        // 如果元素已经非常靠近视窗底部，直接添加类
-        if (viewportHeight - elementBottom < 120) {
-            $(entry.target).addClass('aos-animate');
-        }
+export const hdScroll = () => {
+  const $hd = $('.jHd');
+  let saveScroll = [0, 0];
+
+  $(window).on('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    saveScroll[0] = scrollTop;
+    if (saveScroll[0] < saveScroll[1] && $hd.hasClass('--hide')) {
+      $hd.removeClass('--hide');
+    } else if ($hd.height() < scrollTop && saveScroll[0] > saveScroll[1] && !$hd.hasClass('--hide')) {
+      $hd.addClass('--hide');
     }
-    });
-  }, {
-      root: null,
-      threshold: 0.1,
-      rootMargin: '-120px 0px -120px 0px'
-  });
-
-  const config = { childList: true, subtree: true };
-  const callback = function(mutationsList, observer) {
-      mutationsList.forEach(mutation => {
-          mutation.addedNodes.forEach(node => {
-              if (node.nodeType === 1 && $(node).is('[data-aos]')) { // Check if it's an element node
-                  observer.observe(node);
-              }
-          });
-      });
-  };
-
-  const domObserver = new MutationObserver(callback);
-  domObserver.observe(document.body, config);
-
-  $('[data-aos]').each(function() {
-      observer.observe(this);
-  });
-
-  $('[data-aos]').each(function() {
-    const rect = this.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom >= 0) { // 检查元素是否在视窗内
-        $(this).addClass('aos-animate');
-    }
+    saveScroll[1] = saveScroll[0];
   });
 }
