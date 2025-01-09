@@ -24,34 +24,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
     <link rel="canonical" href="https://tpfc-finess.com">
     <link rel="alternate" href="https://tpfc-finess.com" />
-    <script>
-      ! function(f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function() {
-          n.callMethod ?
-            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s)
-      }(window, document, 'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '420754771004769');
-      fbq('track', 'PageView');
-    </script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=420754771004769&ev=PageView&noscript=1" /></noscript>
-    <link href="/tpfc.fitness/assets/css/about.css?09a7ab7c" rel="stylesheet">
+    <link href="/tpfc.fitness/assets/css/about.css?594828f5" rel="stylesheet">
   </head>
 
   <body>
-    <div class="l-wrap flex flex-col min-h-screen tm:overflow-hidden bg-[var(--black)] jWrap" @vue:mounted="mounted">
-      <div class="l-hd flex-shrink-0 top-0 sticky z-[3] jQ-hd">
+    <div class="l-wrap relative flex flex-col min-h-screen bg-[var(--black)] jWrap" @vue:mounted="mounted">
+      <div class="l-hd flex-shrink-0 top-0 fixed w-full jHd">
         <header class="m-hd p:h-[72px] p:px-[20px] t:px-[15px] m:px-[10px] tm:h-[70px] w-full flex items-center bg-[var(--black)]">
           <h1 class="flex-grow flex items-center"><a href="./" class="m-hd-logo pt:inline-block m:flex m:items-center" rel="noopener" data-aos="fade-in"><svg class="text-[var(--white)] p:w-[260px] p:h-[55px] t:w-[216px] t:h-[60px] m:w-[180px] m:h-[50px]">
                 <use class="fill-current" xlink:href="#logo_sub"></use>
@@ -70,7 +48,7 @@
         <div class="l-content flex-grow overflow-hidden relative bg-[var(--black)]" v-if="store.load.isDone">
           <section class="overflow-hidden bg-[var(--x15)] flex tm:flex-col items-center p:max-h-[345px]">
             <h2 class="text-center text-[var(--white)] p:w-[48%] font-black p:text-[38px] t:text-[42px] m:text-[28px] t:py-[50px] m:py-[20px]">About us<br />關於我們</h2>
-            <figure class="p:w-full p:h-full t:hidden m:w-[375px] m:h-[180px]"><img class="object-cover object-center lazy" alt="室內環境 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_indoor.jpg?a8cc2c30"></figure>
+            <figure class="p:w-full p:h-full t:hidden m:w-[375px] m:h-[180px]"><img class="object-cover object-center lazy" alt="室內環境 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_indoor.jpg?34093f35"></figure>
           </section>
           <section class="text-[var(--white)] bg-[var(--black)] p:p-[60px] t:pt-[30px] m:pt-[14px]">
             <div class="p:mx-auto p:w-[900px]">
@@ -80,14 +58,14 @@
                   <p class="p:mb-[20px] tm:mb-[32px]">FIRST CLASS 的三角鐵，以『人』的字樣發跡，象徵健身創廠， 對於未來人類體適能進化所抱持的遠見與野心。三角點代表著， 從人體核心穩定，分支強化『肌力』『體力』『耐力』之意， 經過後天調整訓練，得到強健的基因，向上適應更高強度的外力。</p>
                   <p>The triangle of FIRST CLASS, with the word "human", symbolizes the vision and ambition of the fitness industry and the future evolution of human fitness. The triangle point represents the stability of the core of the human body, and the branches strengthen the meaning of "muscle strength", "physical strength" and "endurance". After adjustment and training the day after tomorrow, you will get strong genes and adapt to higher- intensity external forces.</p>
                 </div>
-                <figure class="p:ml-[70px] p:w-[363px] p:h-[363px]"><img class="object-cover object-center lazy" alt="健身訓練器材 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_equipment.jpeg?a8cc2c30"></figure>
+                <figure class="p:ml-[70px] p:w-[363px] p:h-[363px]"><img class="object-cover object-center lazy" alt="健身訓練器材 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_equipment.jpeg?34093f35"></figure>
               </div>
             </div>
           </section>
           <section class="text-[var(--white)] bg-[var(--x15)] p:p-[60px] t:pt-[90px] m:pt-[30px]">
             <div class="p:mx-auto p:max-w-[1100px]">
               <div class="flex tm:flex-col-reverse">
-                <figure class="p:mr-[70px] p:w-[363px] p:h-[363px]"><img class="object-cover object-center lazy" alt="健身訓練器材 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_equipment.jpeg?a8cc2c30"></figure>
+                <figure class="p:mr-[70px] p:w-[363px] p:h-[363px]"><img class="object-cover object-center lazy" alt="健身訓練器材 | first class 頭等倉運動空間" width="100%" height="100%" src="/tpfc.fitness/assets/img/service/firstclass_fitness_equipment.jpeg?34093f35"></figure>
                 <div data-aos="fade-up" class="p:w-2/3 tm:pb-[30px] t:px-[30px] m:px-[16px]">
                   <h3 class="font-bold p:text-[38px] p:mb-[20px] tm:text-[30px] tm:mb-[22px]">品牌理念<br />Philosophy of First Class Fitness</h3>
                   <p class="p:w-2/3 p:text-[14px]">頭等倉運動空間自2022年11月開業以來，我們的目標始終是讓每一位來訪的學生不僅培養出運動的興趣，更能愛上每一次的運動體驗。 我們的專業教練們不僅技術精湛，更以無比的耐心和熱情指導每位學生。在這裡，我們提供一對一或一對二的個別訓練模式，確保每位學生都能在完全私密的環境中，獲得最專注的指導和訓練效果。<br>為了提供最專業的重訓教學，我們的課程設計純為重訓專屬，沒有提供皮拉提斯、瑜伽或其他團體課程。我們相信，專注能夠帶來最專業的成果。 此外，我們的設施只開放給學生使用，也歡迎自由教練租借場地。無論您是尋求一個靜謐的訓練空間，還是專業的個別指導，這裡都是您的最佳選擇。<br><br>加入我們，開啟你的健身之旅，一同體驗運動帶來的無限可能！</p>
@@ -208,9 +186,9 @@
         </div>
       </div>
     </div>
-    <script src="static/scripts/plugin/jquery-3.7.0.min.js?47bb6e66"></script>
-    <script src="static/scripts/plugin/petite-vue@0.4.1/petite-vue.iife.js?47bb6e66"></script>
-    <script defer="defer" src="/tpfc.fitness/scripts/about.js?09a7ab7c"></script>
+    <script src="static/scripts/plugin/jquery-3.7.0.min.js?5daa7713"></script>
+    <script src="static/scripts/plugin/petite-vue@0.4.1/petite-vue.iife.js?5daa7713"></script>
+    <script defer="defer" src="/tpfc.fitness/scripts/about.js?594828f5"></script>
   </body>
 
 </html>
