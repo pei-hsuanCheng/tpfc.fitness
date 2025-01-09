@@ -40,6 +40,7 @@ module.exports = {
           /:disabled/,
           /:read-only/,
           /--/,
+          /tns-/,
         ],
       },
     }),

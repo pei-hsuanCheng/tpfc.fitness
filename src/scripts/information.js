@@ -1,7 +1,7 @@
 import {tns} from 'tiny-slider/src/tiny-slider';
-import 'tiny-slider/dist/tiny-slider.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'tiny-slider/dist/tiny-slider.css';
 import '@css/index.css';
 
 import { svgRequire, lazyLoadFun, deviceType } from '_prototype.js';
