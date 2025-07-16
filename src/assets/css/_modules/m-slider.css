@@ -3,7 +3,7 @@
 }
 
 [class^="m-slider-ctrl"] {
-  @apply w-full absolute top-1/2 -translate-y-1/2 flex justify-between items-center pt:px-[20px] m:px-[8px];
+  @apply w-full absolute top-1/2 -translate-y-1/2 flex justify-between items-center pt:px-[10px] m:px-[8px];
 }
 
 .m-slider-prev,
@@ -17,13 +17,13 @@
     width: 20px; /* 水平线的长度 */
     height: 2px; /* 水平线的厚度 */
 
-    @apply absolute top-1/2 left-1/2 bg-[#c9c9c9] -translate-y-1/2 -translate-x-1/2 h-[2px] pt:w-[20px] m:w-[16px];
+    @apply absolute top-1/2 left-1/2 bg-[#c9c9c9] -translate-y-1/2 -translate-x-1/2 h-[1px] pt:w-[20px] m:w-[16px];
   }
 
   &::after {
     content: '';
 
-    @apply absolute top-1/2 pt:left-[40px] m:left-[34px] border-[5px] border-solid border-transparent border-l-[#c9c9c9] -translate-x-full -translate-y-1/2;
+    @apply absolute top-1/2 pt:left-[40px] m:left-[34px] border-[4px] border-solid border-transparent border-l-[#c9c9c9] -translate-x-full -translate-y-1/2;
   }
 }
 
@@ -36,10 +36,12 @@
 }
 
 .tns-nav {
-  @apply absolute bottom-0 left-1/2 -translate-x-1/2 space-x-[4px];
+  @apply flex absolute bottom-0 left-1/2 -translate-x-1/2 space-x-[4px];
 
   &>* {
-    @apply bg-[var(--xc7)] w-[12px] h-[12px] rounded-full;
+    transition: background-color 0.3s ease-in;
+
+    @apply bg-[var(--white)] pt:w-[40px] m:w-[30px] h-[2px];
   }
 }
 

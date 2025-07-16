@@ -9,6 +9,14 @@
     }
   }
 
+  &.\-\-highlight {
+    @apply text-[var(--white)] border-none;
+
+    .m-btn-cnt {
+      @apply bg-[#E12020] bg-opacity-100;
+    }
+  }
+
   &.\-\-border {
     @apply text-[var(--white)];
   }
@@ -47,6 +55,12 @@
 
         .m-btn-cnt {
           @apply bg-opacity-0 text-[var(--white)];
+        }
+      }
+
+      &.\-\-highlight {
+        .m-btn-cnt {
+          @apply bg-[#C40000];
         }
       }
     }

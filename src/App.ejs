@@ -33,6 +33,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
     <link rel="canonical" href="<%- activityURL %>">
     <link rel="alternate" href="<%- activityURL %>" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap" rel="stylesheet">
     <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
@@ -54,15 +56,17 @@
   <body>
     <div class="l-wrap relative flex flex-col min-h-screen bg-[var(--black)] jWrap" @vue:mounted="mounted">
       <!-- Header Start -->
-      <div class="l-hd flex-shrink-0 top-0 fixed w-full jHd"> 
-        <%- require('@component/mHd.ejs')() %>
-        <%- require('@component/mMarquee.ejs')({
-          txt: '凡首次購買，一對一私教人教練課 <b>10</b> 堂 <b>8,000</b> 元，完課期間到館自主訓練免費'
-        }) %>
-      </div>
+       <% if (htmlWebpackPlugin.options.action !== 'resevation') { -%>
+        <div class="l-hd flex-shrink-0 top-0 fixed w-full jHd"> 
+          <%- require('@component/mHd.ejs')() %>
+          <%- require('@component/mMarquee.ejs')({
+            txt: '凡首次購買，一對一私教人教練課 <b>10</b> 堂 <b>8,000</b> 元，完課期間到館自主訓練免費'
+          }) %>
+        </div>
+      <% } -%>
       <!-- Header End -->
       <!-- Content Start -->
-      <div data-aos="fade-in" class="l-main flex flex-grow">
+      <div data-aos="fade-in" class="l-main flex flex-grow<%- htmlWebpackPlugin.options.action !== 'resevation' ? ` is-head` : '' %>">
         <div class="l-content flex-grow overflow-hidden relative bg-[var(--black)]" v-if="store.load.isDone">
           <%- reqFile %>
         </div>
@@ -74,8 +78,14 @@
       </div>
       <!-- Content End -->
       <!-- Footer Start -->
-      <div class="l-ft flex-shrink-0 relative">
-        <%- require('@component/mFt.ejs')() %>
+      <div class="l-ft flex-shrink-0 relative bg-[var(--x15)] text-[var(--white)]">
+        <% if (htmlWebpackPlugin.options.action !== 'resevation') { -%>
+          <%- require('@component/mFt.ejs')() %>
+        <% } else {-%>
+          <small class="m-ft-copyright block py-[24px] text-center text-[13px] bg-[#000] m:px-[20px]">
+            <%- process.env.COPYRIGHT %>
+          </small>
+        <% } -%>
       </div>
       <!-- Footer End -->
     </div>

@@ -5,7 +5,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.l-main {
+.l-main.is-head {
   @apply p:pt-[123px] t:pt-[168px] m:pt-[200px];
 }
 

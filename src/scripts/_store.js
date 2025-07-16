@@ -254,5 +254,76 @@ module.exports = window.PetiteVue.reactive({
       img: require('common/firstclass_fitness_outdoor.jpg'),
       cnt: '訓練區有自由重量、機械器材及啞鈴壺鈴。'
     }]
+  },
+  resevation: {
+    trainingRules: [{
+      subTitle: '方針一',
+      title: '個人化週期訓練規劃',
+      text: '依據你的inbody身體數值與體態測評和個人目標，量身訂製每週課表，不再盲目跟風，確保每一次訓練都有卓越成效。'
+    }, {
+      subTitle: '方針二',
+      title: '漸進式強度設計',
+      text: '精準選擇訓練重量，保證每一次的訓練成效最大化，從輕到重，循序漸進提升訓練強度，讓肌肉持續獲得刺激而非單純疲勞，避免受傷又能穩定成長。'
+    }, {
+      subTitle: '方針三',
+      title: '即時動作修正優化',
+      text: '每個人的身體結構都不同，頭等倉教練會依照你的狀況調整每個訓練動作，確保基礎關鍵動作(深蹲、臥推、硬舉)都做到位，每一下都能發揮最大效益又不會受傷。'
+    }, {
+      subTitle: '方針四',
+      title: '練後成效追蹤',
+      text: '結合體態照片、訓練和飲食紀錄，靈活調整計畫，不但可以增強信心，還能提升訓練動力，進而培養運動興趣，長久維持健康作息，打造易瘦體質！'
+    }],
+    comments: [
+      '教練用心又專業，很仔細調整動作跟呼吸，也會紀錄每一次訓練的過程，是可以安心健身的好地方！大推！',
+      '地點好、環境佳、教練教學認真，值得專程來運動的健身房',
+      '每個動作都會仔細講解，確認你的發力的位置對不對，讓重訓菜雞也能上手，課後還會給菜單，教你在家如何自己鍛鍊',
+      '之前有在其他地方練過<br/>本來以為自己程度算不錯的...結果被調整動作才知道原來都在練心酸的',
+      '朋友推薦來頭等倉，針對個人想要練的目標來個簡單體驗課（翹屁屁<br/>覺得運動是持續讓心情好的事情，確實也需要找到運動的動力來源才得以繼續<br/>這裡的教練人都很親切',
+      '已經持續來一個月了，覺得教練教學真的非常用心，跟台北的健身房來比CP值真的很高。',
+    ],
+    inbody: [{
+      img: require('resevation/inbody_1.png'),
+      alt: '3個月內體脂下降10%',
+      text: '許學員3個月內透過allen教練的訓練從體脂35%下降到28％'
+    }, {
+      img: require('resevation/inbody_1.png'),
+      alt: '3個月內體脂下降10%',
+      text: '許學員3個月內透過allen教練的訓練從體脂35%下降到28％'
+    }, {
+      img: require('resevation/inbody_1.png'),
+      alt: '3個月內體脂下降10%',
+      text: '許學員3個月內透過allen教練的訓練從體脂35%下降到28％'
+    }],
+    bodyShape: [{
+      before: {
+        img: require('resevation/body_shape_before_1.png'),
+        alt: '3個月內體脂下降10%',
+      },
+      after: {
+        img: require('resevation/body_shape_after_1.png'),
+        alt: '3個月內體脂下降10%',
+      },
+      text: '許學員3個月內透過allen教練的訓練從體脂35%下降到28％'
+    }, {
+      before: {
+        img: require('resevation/body_shape_before_1.png'),
+        alt: '3個月內體脂下降10%',
+      },
+      after: {
+        img: require('resevation/body_shape_after_1.png'),
+        alt: '3個月內體脂下降10%',
+      },
+      text: '許學員3個月內透過allen教練的訓練從體脂35%下降到28％'
+    }, {
+      before: {
+        img: require('resevation/body_shape_before_1.png'),
+        alt: '3個月內體脂下降10%',
+      },
+      after: {
+        img: require('resevation/body_shape_after_1.png'),
+        alt: '3個月內體脂下降10%',
+      },
+      text: '許學員3個月內透過allen教練的訓練從體脂35%下降到28％'
+    }]
   }
 });
