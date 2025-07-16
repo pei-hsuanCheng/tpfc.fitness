@@ -78,8 +78,9 @@ window.PetiteVue.createApp({
           items: 1,
           edgePadding: 40,
           gutter: 10,
-          nav: true,
-          controls: false,
+          nav: false,
+          controls: true,
+          controlsContainer: '.comments-slider-ctrl',
           responsive: {
             740: {
               items: 2,
@@ -136,5 +137,11 @@ window.PetiteVue.createApp({
     this.slider = null;
     this.commentSlider = null;
     this.memberResultSlider = null;
+  },
+
+  scrollToResevation() {
+    document.querySelector('#resevation').scrollIntoView({
+      behavior: 'smooth' // 平滑滾動
+    });
   }
 }).mount('.jWrap');
